@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1.0, user-scalable=no">
+
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta content="yes" name="apple-touch-fullscreen" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <!--<link rel="apple-touch-icon" href="m2v_icon.png" />
+  <link rel="apple-touch-startup-image" href="splashscreen.png" />-->
+
+  <title>Webapp</title>
+
+  <!-- Application styles. -->
+  <link rel="stylesheet" href="assets/stylesheets/screen.css" />
+</head>
+
+<body class="split-view page-layout">
+  
+  <div id="menu" class="page-layout">
+
+    <div id="menu-header" class="top-bar">
+    </div>
+
+    <div id="menu-main" class="page-layout with-topbar">
+    </div>
+
+  </div>
+  
+  <div id="app" class="page-layout">
+
+    <!-- Header container. -->
+    <div id="header" class="top-bar">
+    </div>
+
+    <!-- Main container. -->
+    <div role="main" id="main" class="page-layout with-topbar transition-region">
+    </div>
+
+    <!--<div id="tab-bar" class="tab-bar">
+      <a href="" data-animation="slideright"><span class="icon">✤</span><span class="title">Home</span></a>
+      <a href="post" data-animation="slideleft"><span class="icon">❉</span><span class="title">Post</span></a>
+      <a href="post" class="selected" data-animation="slideleft"><span class="icon">✾</span><span class="title">Tada</span></a>
+    </div>-->
+
+  </div>
+
+  <!-- Application source. -->
+  <script data-main="app/config" src="assets/js/libs/require.js"></script>
+</body>
+</html>

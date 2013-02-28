@@ -1,0 +1,269 @@
+/* Welcome to Compass.
+ * In this file you should write your main styles. (or centralize your imports)
+ * Import this file using the following HTML or equivalent:
+ * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+
+@import "compass/reset";
+@import "compass/css3";
+
+@import "transition-region";
+
+
+@mixin display-flex{
+	@include experimental-value(display, box, -moz, -webkit, not -o, -ms, not -khtml); 
+	@include experimental-value(display, flexbox, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental-value(display, flex, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin flex($flex: $default-box-flex){
+	@include experimental(box-flex, $flex, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(flex, $flex, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin order($group: $default-ordinal-flex-group) {
+	@include experimental(box-ordinal-group, $group, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(flex-order, $group, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(order, $group, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin flex-direction($orientation: $default-box-orient) {
+	$orientation: unquote($orientation);
+	$old-orientation : $orientation;
+	@if ($orientation == 'column'){ $old-orientation: vertical; }
+	@include experimental(box-orient, $old-orientation, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(flex-direction, $orientation, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin flex-wrap($wrap) {
+	$wrap: unquote($wrap);
+	@include experimental(flex-wrap, $wrap, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin justify-content($pack: $default-box-pack) {
+	$pack: unquote($pack);
+	@include experimental(box-pack, $pack, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(flex-pack, $pack, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(justify-content, $pack, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin align-items($alignment: $default-box-align) {
+	$alignment: unquote($alignment);
+	@include experimental(box-align, $alignment, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(flex-align, $alignment, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(align-items, $alignment, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+
+$bleu:#2B2B67;
+$bleuClair:lavender;
+
+$orangeFonce:#FF4F00;
+$orangeClair:#FFBF00;
+
+$default-border-radius: 6px;
+
+$height-bottombar: 50px;
+$height-topbar: 50px;
+
+
+html{
+	font-family: 'Helvetica Neue' ,Helvetica , sans-serif;
+	background-color:#F4F4F4;
+	-webkit-text-size-adjust:none;
+}
+a{text-decoration: none;color:$bleu;}
+p{margin:10px 0;}
+//#main > div *{-webkit-margin-collapse: separate;}
+
+.cssanimations.csstransforms3d  {
+	.page-layout{
+		position: absolute;
+		width:100%;
+		top: 0;
+		right: 0;
+		left: 0;
+		bottom: 0;
+		
+		overflow-x: hidden;
+		-webkit-overflow-scrolling: touch;
+
+		&.with-topbar{
+			top: $height-topbar;
+		}
+		&.with-bottombar{
+			bottom: $height-bottombar;
+		}
+	}
+}
+.no-cssanimations, .no-csstransforms3d{
+	html, body, .page-layout{height:100%;}
+	.page-layout{
+		position: relative;
+		padding-top: 0;
+		padding-bottom: 0;
+		&.with-topbar{
+			padding-top: $height-topbar;
+		}
+		&.with-bottombar{
+			padding-bottom: $height-bottombar;
+		}
+	}
+}
+
+
+.cssanimations.csstransforms3d  {
+	#app{
+		z-index: 20;
+	}
+	#main{
+		
+		z-index: 30;
+	}
+	#main > * {
+		padding: 0 10px;
+		box-sizing: border-box;
+	}
+	#menu-main > * {
+		padding: 0 10px;
+		box-sizing: border-box;
+	}
+	/*#main > * > * {
+		display: block;
+		left: 0;
+		top: 0;
+		width: 100%;
+		padding:0 10px;
+
+		overflow-y: hidden;
+		position: absolute;
+		z-index: 0;
+		min-height: 101%;
+
+		display: -webkit-box;
+		display: box;
+		-webkit-box-orient: vertical;
+		box-orient: vertical;
+		-webkit-box-flex: 1;
+		box-flex: 1;
+		@include box-sizing(border-box);
+
+		padding-bottom: 2px;
+	}*/
+
+}
+
+/*.no-cssanimations, .no-csstransforms3d   {
+	&, & #app{height:100%;}
+	#app{position: relative;}
+	#main{
+		position: relative;
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+
+}*/
+
+.split-view{
+	>.page-layout:nth-child(1){
+		width: 30%;
+	}
+	>.page-layout:nth-child(2){
+		left: 30%;
+		width:70%; 
+	}
+}
+
+.top-bar{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 50px;
+}
+
+.tab-bar{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	height: 50px;
+	@include display-flex;
+	@include justify-content(center);
+	>*{
+		@include flex(1);
+
+		@include display-flex;
+		@include flex-direction(column);
+		@include align-items(center);
+		&.selected{
+			background-color: $bleu;
+			color:white;
+		}
+		>*{
+			display: block;
+			//@include flex(1);
+			&.icon{
+				font-size: 32px;
+				padding: 2px 0;
+				height: 32px;
+				box-sizing: border-box;
+			}
+			&.title{
+				font-size: 14px;
+				padding: 2px 0;
+				height: 18px;
+				box-sizing: border-box;
+			}
+		}
+	}
+}
+
+
+#header{
+	z-index: 50;
+	background-color: #FFF;
+	@include single-box-shadow(rgba(0,0,0,0.3), 0, 0, 3px, false, false);
+}
+
+#menu-header{
+	z-index: 50;
+	background-color: $bleuClair;
+	@include single-box-shadow(rgba(0,0,0,0.3), 0, 0, 3px, false, false);
+}
+
+#menu-main{
+	background-color: white;
+}
+
+#tab-bar{
+	z-index: 40;
+	background-color: #FFF;
+	@include single-box-shadow(rgba(0,0,0,0.3), 0, 0, 3px, false, false);
+}
+
+/*
+.cssanimations.csstransforms3d, .no-cssanimations, .no-csstransforms3d  {
+	#main > .current {
+		z-index: 40;
+	}
+	#main > :not(.current) {
+		display: none;
+	}
+}
+*/
+/////////////
+
+//#home{
+	li{
+		margin:10px 0;
+		padding: 10px;
+		@include border-radius;
+		font-size:16px;
+		background-color:$bleuClair;	
+	}
+//}
+
+#menu-main li{
+	background-color:$bleu;
+	color: white;
+}
