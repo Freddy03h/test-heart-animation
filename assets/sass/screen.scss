@@ -6,7 +6,7 @@
 @import "compass/reset";
 @import "compass/css3";
 
-@import "transition-region";
+@import "animation-region";
 
 
 @mixin display-flex{
@@ -63,17 +63,27 @@ $orangeClair:#FFBF00;
 $default-border-radius: 6px;
 
 $height-bottombar: 50px;
-$height-topbar: 50px;
+$height-topbar: 44px;
 
 
 html{
 	font-family: 'Helvetica Neue' ,Helvetica , sans-serif;
-	background-color:#F4F4F4;
+	background-color:black;
 	-webkit-text-size-adjust:none;
 }
 a{text-decoration: none;color:$bleu;}
-p{margin:10px 0;}
+p{margin:10px;}
 //#main > div *{-webkit-margin-collapse: separate;}
+#header, #menu-header{
+	@include display-flex;
+	@include align-items(center);
+	p{
+		color:$bleu;
+		margin:10px;
+		font-weight: bold;
+		font-size: 32px;
+	}
+}
 
 .cssanimations.csstransforms3d  {
 	.page-layout{
@@ -85,6 +95,7 @@ p{margin:10px 0;}
 		bottom: 0;
 		
 		overflow-x: hidden;
+		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 
 		&.with-topbar{
@@ -113,19 +124,11 @@ p{margin:10px 0;}
 
 .cssanimations.csstransforms3d  {
 	#app{
-		z-index: 20;
+		//z-index: 20;
 	}
 	#main{
 		
 		z-index: 30;
-	}
-	#main > * {
-		padding: 0 10px;
-		box-sizing: border-box;
-	}
-	#menu-main > * {
-		padding: 0 10px;
-		box-sizing: border-box;
 	}
 	/*#main > * > * {
 		display: block;
@@ -163,13 +166,17 @@ p{margin:10px 0;}
 
 }*/
 
+$largeurMenu :320px - $height-topbar;
 .split-view{
 	>.page-layout:nth-child(1){
-		width: 30%;
+		width: $largeurMenu;
+		z-index:1;
 	}
 	>.page-layout:nth-child(2){
-		left: 30%;
-		width:70%; 
+		left: $largeurMenu;
+		width: -webkit-calc(100% - #{$largeurMenu});
+		width: calc(100% - #{$largeurMenu});
+		z-index:2;
 	}
 }
 
@@ -178,7 +185,7 @@ p{margin:10px 0;}
 	top: 0;
 	right: 0;
 	left: 0;
-	height: 50px;
+	height: $height-topbar;
 }
 
 .tab-bar{
@@ -231,8 +238,14 @@ p{margin:10px 0;}
 	@include single-box-shadow(rgba(0,0,0,0.3), 0, 0, 3px, false, false);
 }
 
+
 #menu-main{
 	background-color: white;
+}
+
+#app{
+	background-color:#F4F4F4;
+	@include single-box-shadow(rgba(0,0,0,0.3), 0, 0, 10px, false, false);
 }
 
 #tab-bar{
@@ -255,7 +268,7 @@ p{margin:10px 0;}
 
 //#home{
 	li{
-		margin:10px 0;
+		margin:10px;
 		padding: 10px;
 		@include border-radius;
 		font-size:16px;
@@ -266,4 +279,51 @@ p{margin:10px 0;}
 #menu-main li{
 	background-color:$bleu;
 	color: white;
+}
+
+.menu-button{
+	display: none;
+	width: $height-topbar;
+	height: 100%;
+	background-color: $bleu;
+	color:white;
+	
+	.icon{
+		font-size: 32px;
+	}
+}
+
+@media screen and (max-width: 570px) {
+	.split-view{
+		>.page-layout{
+			-webkit-transition-property: -webkit-transform;
+			transition-property: transform;
+			-webkit-transition-duration:300ms;
+			transition-duration:300ms;
+			-webkit-transition-timing-function: ease-in-out;
+			transition-timing-function: ease-in-out;
+		}
+		>.page-layout:nth-child(1){
+			width: $largeurMenu;
+			//display: none;
+		}
+		>.page-layout:nth-child(2){
+			left:0;
+			width: 100%;
+		}
+		&.open-menu{
+			>.page-layout:nth-child(1){
+				//display: block;
+			}
+			>.page-layout:nth-child(2){
+				-webkit-transform: translateX($largeurMenu);
+			}
+		}
+	}
+
+	.menu-button{
+		@include display-flex;
+		@include justify-content(center);
+		@include align-items(center);
+	}
 }

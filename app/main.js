@@ -5,13 +5,13 @@ require([
   // Main Router.
   "router",
 
-  "views/menu"
+  "views/split-view"
 ],
 
-function(app, Router, MenuView) {
+function(app, Router, SplitView) {
 
-  app.someModule.views.menu = new MenuView();
-  app.menuRegion.show(app.someModule.views.menu);
+  app.someModule.views.split = new SplitView();
+  app.bodyRegion.show(app.someModule.views.split);
 
   // Define your master router on the application namespace and trigger all
   // navigation from this instance.
@@ -19,7 +19,7 @@ function(app, Router, MenuView) {
 
   // Trigger the initial route and enable HTML5 History API support, set the
   // root folder to '/' by default.  Change in app.js.
-  Backbone.history.start({/* pushState: true,*/ root: app.root });
+  Backbone.history.start({ /*pushState: false,*/ root: app.root });
 
   // All navigation that is relative should be passed through the navigate
   // method, to be processed by the router. If the link has a `data-bypass`

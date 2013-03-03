@@ -31,7 +31,7 @@ require.config({
 
     "plugins/backbone.marionette": ["backbone"],
 
-    "plugins/backbone.marionette.transitionregion": ["plugins/backbone.marionette"]
+    "plugins/backbone.marionette.animationregion": ["plugins/backbone.marionette"]
   }
 
 });

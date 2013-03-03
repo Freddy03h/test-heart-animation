@@ -1,12 +1,12 @@
 .cssanimations.csstransforms3d  {
 
-	.transition-region{
+	.animation-region{
 	    perspective: 1000;
 	    transform-style: preserve-3d;
 	    overflow: hidden;
 	    //transform: translate3d(0,0,0) rotate(0) scale(1);
 	}
-	.transition-region > * {
+	.animation-region > * {
 		width: 100%;
 		position: absolute;
 		display: block;
@@ -18,7 +18,7 @@
             
         }
 	}
-	.transition-region > :not(.current) {
+	.animation-region > :not(.current) {
 		display: none;
 	}
 
@@ -28,11 +28,22 @@
         top: 0;
         right: 0;
         bottom: 0;
-		overflow-y: auto;
+		//overflow-y: auto;
+        //overflow-y: auto;
+        //-webkit-overflow-scrolling: touch;
+        
+        overflow-x: hidden;
+        overflow-y: auto;
+        //-webkit-overflow-scrolling: touch;
+
 		>div{
 			display: block;
-			min-height: 101%;
-			//padding-bottom: 2px;
+			min-height: 100%;
+            top: 0;
+            position: absolute;
+            width: 100%;
+            min-height: -webkit-calc(100% + 1px);
+            min-height: calc(100% + 1px);
             &:after {
                 top: 0;
                 left: 0;

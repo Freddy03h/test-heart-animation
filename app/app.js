@@ -9,7 +9,7 @@ define([
   //"plugins/backbone.layoutmanager"
   "plugins/jquery.toObject",
   "plugins/backbone.marionette",
-  "plugins/backbone.marionette.transitionregion"
+  "plugins/backbone.marionette.animationregion"
 
 ],
 
@@ -54,9 +54,7 @@ function($, _, Backbone) {
   });
 
   app.addRegions({
-    mainRegion: Backbone.Marionette.TransitionRegion,
-    headerRegion: '#header',
-    menuRegion: '#menu-main'
+    bodyRegion: 'body'
   });
 
   return app;

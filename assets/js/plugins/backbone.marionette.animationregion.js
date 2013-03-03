@@ -3,9 +3,8 @@
 
 // Manage the visual regions of your composite application. See
 // http://lostechies.com/derickbailey/2011/12/12/composite-js-apps-regions-and-region-managers/
-Backbone.Marionette.TransitionRegion = Backbone.Marionette.Region.extend({
+Backbone.Marionette.AnimationRegion = Backbone.Marionette.Region.extend({
 
-    el: "#main",
   //animation: 'dissolve',
   //has3d: (Modernizr.overflowscrolling && (typeof window.WebKitAnimationEvent != 'undefined') && ('WebKitCSSMatrix' in window && 'm11' in new WebKitCSSMatrix())),
   initialize: function(){
