@@ -30,7 +30,7 @@ function(app, Router, SplitView) {
     // Get the absolute root.
     var root = location.protocol + "//" + location.host + app.root;
 
-    app.mainRegion.animation = evt.currentTarget.getAttribute('data-animation') || 'dissolve';
+    app.bodyRegion.currentView.mainRegion.animation = evt.currentTarget.getAttribute('data-animation') || 'dissolve';
 
     // Ensure the root is part of the anchor href, meaning it's relative.
     if (href.prop.slice(0, root.length) === root) {

@@ -128,7 +128,7 @@ p{margin:10px;}
 	}
 	#main{
 		
-		z-index: 30;
+		//z-index: 30;
 	}
 	/*#main > * > * {
 		display: block;
@@ -227,13 +227,13 @@ $largeurMenu :320px - $height-topbar;
 
 
 #header{
-	z-index: 50;
+	//z-index: 50;
 	background-color: #FFF;
 	@include single-box-shadow(rgba(0,0,0,0.3), 0, 0, 3px, false, false);
 }
 
 #menu-header{
-	z-index: 50;
+	//z-index: 50;
 	background-color: $bleuClair;
 	@include single-box-shadow(rgba(0,0,0,0.3), 0, 0, 3px, false, false);
 }
@@ -249,7 +249,7 @@ $largeurMenu :320px - $height-topbar;
 }
 
 #tab-bar{
-	z-index: 40;
+	//z-index: 40;
 	background-color: #FFF;
 	@include single-box-shadow(rgba(0,0,0,0.3), 0, 0, 3px, false, false);
 }
