@@ -20,7 +20,8 @@ function(app, template, MenuView) {
       menuRegion: '#menu-main'
     },
     events: {
-      'click .menu-button': 'openMenu'
+      'click .menu-button': 'openMenu',
+      'click #menu a': 'openMenu'
     },
     initialize : function(e){
       this.menuView = new MenuView();
