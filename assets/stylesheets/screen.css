@@ -68,6 +68,16 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 1, ../sass/_animation-region.scss */
+.animation-region > :not(.current) {
+  display: none;
+}
+
+/* line 5, ../sass/_animation-region.scss */
+.pull-to-refresh {
+  display: none;
+}
+
+/* line 9, ../sass/_animation-region.scss */
 .cssanimations.csstransforms3d {
   	/*.scrollable{
           position: absolute;
@@ -125,13 +135,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
           
   	}*/
 }
-/* line 3, ../sass/_animation-region.scss */
+/* line 11, ../sass/_animation-region.scss */
 .cssanimations.csstransforms3d .animation-region {
   perspective: 1000;
   transform-style: preserve-3d;
   overflow: hidden;
 }
-/* line 9, ../sass/_animation-region.scss */
+/* line 17, ../sass/_animation-region.scss */
 .cssanimations.csstransforms3d .animation-region > * {
   width: 100%;
   position: absolute;
@@ -140,11 +150,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   -webkit-backface-visibility: hidden;
   -webkit-transform: translate3d(0, 0, 0) rotate(0) scale(1);
 }
-/* line 21, ../sass/_animation-region.scss */
+/* line 29, ../sass/_animation-region.scss */
 .cssanimations.csstransforms3d .animation-region > :not(.current) {
   display: none;
 }
-/* line 80, ../sass/_animation-region.scss */
+/* line 88, ../sass/_animation-region.scss */
 .cssanimations.csstransforms3d .scrollable {
   position: absolute;
   width: 100%;
@@ -155,11 +165,15 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;*/
   min-height: 100%;
-  padding-bottom: 1px;
   -webkit-transform: translate3d(0, 0, 0);
 }
-/* line 112, ../sass/_animation-region.scss */
-.cssanimations.csstransforms3d .pull-to-refresh {
+/* line 111, ../sass/_animation-region.scss */
+.cssanimations.csstransforms3d.overflowscrolling.ios-device .scrollable {
+  padding-bottom: 1px;
+}
+/* line 125, ../sass/_animation-region.scss */
+.cssanimations.csstransforms3d.overflowscrolling.ios-device .pull-to-refresh {
+  display: block;
   height: 60px;
   width: 100%;
   position: absolute;
@@ -177,207 +191,207 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 	bottom: -60px;
 }*/
 /***************/
-/* line 138, ../sass/_animation-region.scss */
+/* line 153, ../sass/_animation-region.scss */
 .slideleft.in, .slideleft.out {
   -webkit-animation-duration: 400ms;
   animation-duration: 400ms;
 }
 
-/* line 143, ../sass/_animation-region.scss */
+/* line 158, ../sass/_animation-region.scss */
 .slideleft.in {
   -webkit-animation-name: slideLeftIn;
   animation-name: slideLeftIn;
 }
 
-/* line 148, ../sass/_animation-region.scss */
+/* line 163, ../sass/_animation-region.scss */
 .slideleft.out {
   -webkit-animation-name: slideLeftOut;
   animation-name: slideLeftOut;
 }
 
 @-webkit-keyframes slideLeftIn {
-  /* line 154, ../sass/_animation-region.scss */
+  /* line 169, ../sass/_animation-region.scss */
   0% {
     -webkit-transform: translate3d(100%, 0, 0);
   }
 
-  /* line 157, ../sass/_animation-region.scss */
+  /* line 172, ../sass/_animation-region.scss */
   100% {
     -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
 @-webkit-keyframes slideLeftOut {
-  /* line 163, ../sass/_animation-region.scss */
+  /* line 178, ../sass/_animation-region.scss */
   0% {
     -webkit-transform: translate3d(0, 0, 0);
   }
 
-  /* line 166, ../sass/_animation-region.scss */
+  /* line 181, ../sass/_animation-region.scss */
   100% {
     -webkit-transform: translate3d(-100%, 0, 0);
   }
 }
 
 @keyframes slideLeftIn {
-  /* line 172, ../sass/_animation-region.scss */
+  /* line 187, ../sass/_animation-region.scss */
   0% {
     transform: translate3d(100%, 0, 0);
   }
 
-  /* line 175, ../sass/_animation-region.scss */
+  /* line 190, ../sass/_animation-region.scss */
   100% {
     transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes slideLeftOut {
-  /* line 181, ../sass/_animation-region.scss */
+  /* line 196, ../sass/_animation-region.scss */
   0% {
     transform: translate3d(0, 0, 0);
   }
 
-  /* line 184, ../sass/_animation-region.scss */
+  /* line 199, ../sass/_animation-region.scss */
   100% {
     transform: translate3d(-100%, 0, 0);
   }
 }
 
 /* Slide Right */
-/* line 191, ../sass/_animation-region.scss */
+/* line 206, ../sass/_animation-region.scss */
 .slideright.in, .slideright.out {
   -webkit-animation-duration: 400ms;
   animation-duration: 400ms;
 }
 
-/* line 196, ../sass/_animation-region.scss */
+/* line 211, ../sass/_animation-region.scss */
 .slideright.in {
   -webkit-animation-name: slideRightIn;
   animation-name: slideRightIn;
 }
 
-/* line 201, ../sass/_animation-region.scss */
+/* line 216, ../sass/_animation-region.scss */
 .slideright.out {
   -webkit-animation-name: slideRightOut;
   animation-name: slideRightOut;
 }
 
 @-webkit-keyframes slideRightIn {
-  /* line 207, ../sass/_animation-region.scss */
+  /* line 222, ../sass/_animation-region.scss */
   0% {
     -webkit-transform: translate3d(-100%, 0, 0);
   }
 
-  /* line 210, ../sass/_animation-region.scss */
+  /* line 225, ../sass/_animation-region.scss */
   100% {
     -webkit-transform: translate3d(0, 0, 0);
   }
 }
 
 @-webkit-keyframes slideRightOut {
-  /* line 216, ../sass/_animation-region.scss */
+  /* line 231, ../sass/_animation-region.scss */
   0% {
     -webkit-transform: translate3d(0, 0, 0);
   }
 
-  /* line 219, ../sass/_animation-region.scss */
+  /* line 234, ../sass/_animation-region.scss */
   100% {
     -webkit-transform: translate3d(100%, 0, 0);
   }
 }
 
 @keyframes slideRightIn {
-  /* line 225, ../sass/_animation-region.scss */
+  /* line 240, ../sass/_animation-region.scss */
   0% {
     transform: translate3d(-100%, 0, 0);
   }
 
-  /* line 228, ../sass/_animation-region.scss */
+  /* line 243, ../sass/_animation-region.scss */
   100% {
     transform: translate3d(0, 0, 0);
   }
 }
 
 @keyframes slideRightOut {
-  /* line 234, ../sass/_animation-region.scss */
+  /* line 249, ../sass/_animation-region.scss */
   0% {
     transform: translate3d(0, 0, 0);
   }
 
-  /* line 237, ../sass/_animation-region.scss */
+  /* line 252, ../sass/_animation-region.scss */
   100% {
     transform: translate3d(100%, 0, 0);
   }
 }
 
 /* Disolve */
-/* line 243, ../sass/_animation-region.scss */
+/* line 258, ../sass/_animation-region.scss */
 .dissolve.in, .dissolve.out {
   -webkit-animation-duration: 400ms;
   animation-duration: 400ms;
 }
 
-/* line 248, ../sass/_animation-region.scss */
+/* line 263, ../sass/_animation-region.scss */
 .dissolve.in {
   -webkit-animation-name: dissolveIn;
   animation-name: dissolveIn;
 }
 
-/* line 253, ../sass/_animation-region.scss */
+/* line 268, ../sass/_animation-region.scss */
 .dissolve.out {
   -webkit-animation-name: dissolveOut;
   animation-name: dissolveOut;
 }
 
 @-webkit-keyframes dissolveIn {
-  /* line 259, ../sass/_animation-region.scss */
+  /* line 274, ../sass/_animation-region.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 262, ../sass/_animation-region.scss */
+  /* line 277, ../sass/_animation-region.scss */
   100% {
     opacity: 1;
   }
 }
 
 @-webkit-keyframes dissolveOut {
-  /* line 268, ../sass/_animation-region.scss */
+  /* line 283, ../sass/_animation-region.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 271, ../sass/_animation-region.scss */
+  /* line 286, ../sass/_animation-region.scss */
   100% {
     opacity: 0;
   }
 }
 
 @keyframes dissolveIn {
-  /* line 277, ../sass/_animation-region.scss */
+  /* line 292, ../sass/_animation-region.scss */
   0% {
     opacity: 0;
   }
 
-  /* line 280, ../sass/_animation-region.scss */
+  /* line 295, ../sass/_animation-region.scss */
   100% {
     opacity: 1;
   }
 }
 
 @keyframes dissolveOut {
-  /* line 286, ../sass/_animation-region.scss */
+  /* line 301, ../sass/_animation-region.scss */
   0% {
     opacity: 1;
   }
 
-  /* line 289, ../sass/_animation-region.scss */
+  /* line 304, ../sass/_animation-region.scss */
   100% {
     opacity: 0;
   }
 }
 
-/* line 297, ../sass/_animation-region.scss */
+/* line 312, ../sass/_animation-region.scss */
 .in, .out {
   -webkit-animation-duration: 400ms;
   -webkit-animation-fill-mode: both;
@@ -453,50 +467,125 @@ p {
 }
 
 /* line 89, ../sass/screen.scss */
-.cssanimations.csstransforms3d body {
+body {
   overflow: hidden !important;
 }
+
 /* line 90, ../sass/screen.scss */
-.cssanimations.csstransforms3d .page-layout {
+.page-layout {
   position: absolute;
-  width: 100%;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
-  overflow-x: hidden;
-  overflow-y: auto;
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
   -webkit-overflow-scrolling: touch;
 }
 /* line 102, ../sass/screen.scss */
-.cssanimations.csstransforms3d .page-layout.with-topbar {
+.page-layout.with-topbar {
   top: 44px;
 }
 /* line 105, ../sass/screen.scss */
-.cssanimations.csstransforms3d .page-layout.with-bottombar {
+.page-layout.with-bottombar {
   bottom: 50px;
 }
 
-/* line 111, ../sass/screen.scss */
-.no-cssanimations html, .no-cssanimations body, .no-cssanimations .page-layout, .no-csstransforms3d html, .no-csstransforms3d body, .no-csstransforms3d .page-layout {
-  height: 100%;
+/* line 110, ../sass/screen.scss */
+.no-cssanimations, .no-csstransforms3d {
+  /*top: 0;
+  right: 0;
+  left: 0;*/
 }
 /* line 112, ../sass/screen.scss */
+.no-cssanimations, .no-cssanimations body, .no-csstransforms3d, .no-csstransforms3d body {
+  height: 100%;
+}
+/* line 113, ../sass/screen.scss */
 .no-cssanimations .page-layout, .no-csstransforms3d .page-layout {
   position: relative;
+  bottom: auto;
   padding-top: 0;
   padding-bottom: 0;
+  overflow-y: visible !important;
 }
-/* line 116, ../sass/screen.scss */
+/* line 139, ../sass/screen.scss */
+.no-cssanimations .split-view, .no-csstransforms3d .split-view {
+  min-height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: -ms-flexbox;
+  display: flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+}
+/* line 143, ../sass/screen.scss */
+.no-cssanimations .split-view > .page-layout, .no-csstransforms3d .split-view > .page-layout {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-box;
+  display: box;
+  display: -webkit-flexbox;
+  display: -moz-flexbox;
+  display: -ms-flexbox;
+  display: flexbox;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -ms-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+/* line 146, ../sass/screen.scss */
+.no-cssanimations .split-view > .page-layout > .page-layout, .no-csstransforms3d .split-view > .page-layout > .page-layout {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+/* line 151, ../sass/screen.scss */
+.no-cssanimations .split-view > .aside-view, .no-csstransforms3d .split-view > .aside-view {
+  position: relative;
+  min-height: 100%;
+}
+/* line 156, ../sass/screen.scss */
+.no-cssanimations .split-view > .content-view, .no-csstransforms3d .split-view > .content-view {
+  left: auto;
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -ms-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+/* line 160, ../sass/screen.scss */
+.no-cssanimations .top-bar, .no-csstransforms3d .top-bar {
+  position: static;
+}
+/* line 163, ../sass/screen.scss */
 .no-cssanimations .page-layout.with-topbar, .no-csstransforms3d .page-layout.with-topbar {
-  padding-top: 44px;
-}
-/* line 119, ../sass/screen.scss */
-.no-cssanimations .page-layout.with-bottombar, .no-csstransforms3d .page-layout.with-bottombar {
-  padding-bottom: 50px;
+  top: auto;
 }
 
-/* line 126, ../sass/screen.scss */
+/* line 169, ../sass/screen.scss */
 .cssanimations.csstransforms3d {
   	/*#main > * > * {
   		display: block;
@@ -532,20 +621,18 @@ p {
 	}
 
 }*/
-/* line 172, ../sass/screen.scss */
-.split-view > .page-layout:nth-child(1) {
+/* line 215, ../sass/screen.scss */
+.split-view > .aside-view {
   width: 276px;
   z-index: 1;
 }
-/* line 176, ../sass/screen.scss */
-.split-view > .page-layout:nth-child(2) {
+/* line 219, ../sass/screen.scss */
+.split-view > .content-view {
   left: 276px;
-  width: -webkit-calc(100% - 276px);
-  width: calc(100% - 276px);
   z-index: 2;
 }
 
-/* line 184, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 .top-bar {
   position: absolute;
   top: 0;
@@ -554,7 +641,7 @@ p {
   height: 44px;
 }
 
-/* line 192, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 .tab-bar {
   position: absolute;
   bottom: 0;
@@ -586,7 +673,7 @@ p {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 200, ../sass/screen.scss */
+/* line 243, ../sass/screen.scss */
 .tab-bar > * {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -629,23 +716,23 @@ p {
   -ms-align-items: center;
   align-items: center;
 }
-/* line 206, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 .tab-bar > *.selected {
   background-color: #2b2b67;
   color: white;
 }
-/* line 210, ../sass/screen.scss */
+/* line 253, ../sass/screen.scss */
 .tab-bar > * > * {
   display: block;
 }
-/* line 213, ../sass/screen.scss */
+/* line 256, ../sass/screen.scss */
 .tab-bar > * > *.icon {
   font-size: 32px;
   padding: 2px 0;
   height: 32px;
   box-sizing: border-box;
 }
-/* line 219, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 .tab-bar > * > *.title {
   font-size: 14px;
   padding: 2px 0;
@@ -653,7 +740,7 @@ p {
   box-sizing: border-box;
 }
 
-/* line 230, ../sass/screen.scss */
+/* line 273, ../sass/screen.scss */
 #header {
   background-color: #FFF;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -661,7 +748,7 @@ p {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-/* line 236, ../sass/screen.scss */
+/* line 279, ../sass/screen.scss */
 #menu-header {
   background-color: lavender;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -669,12 +756,12 @@ p {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-/* line 243, ../sass/screen.scss */
+/* line 286, ../sass/screen.scss */
 #menu-main {
   background-color: white;
 }
 
-/* line 247, ../sass/screen.scss */
+/* line 290, ../sass/screen.scss */
 #app {
   background-color: #F4F4F4;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -682,7 +769,7 @@ p {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* line 252, ../sass/screen.scss */
+/* line 295, ../sass/screen.scss */
 #tab-bar {
   background-color: #FFF;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -700,7 +787,7 @@ p {
 	}
 }
 */
-/* line 271, ../sass/screen.scss */
+/* line 314, ../sass/screen.scss */
 li {
   margin: 10px;
   padding: 10px;
@@ -713,13 +800,13 @@ li {
   background-color: lavender;
 }
 
-/* line 280, ../sass/screen.scss */
+/* line 323, ../sass/screen.scss */
 #menu-main li {
   background-color: #2b2b67;
   color: white;
 }
 
-/* line 285, ../sass/screen.scss */
+/* line 328, ../sass/screen.scss */
 .menu-button {
   display: none;
   width: 44px;
@@ -727,13 +814,13 @@ li {
   background-color: #2b2b67;
   color: white;
 }
-/* line 292, ../sass/screen.scss */
+/* line 335, ../sass/screen.scss */
 .menu-button .icon {
   font-size: 32px;
 }
 
 @media screen and (max-width: 570px) {
-  /* line 299, ../sass/screen.scss */
+  /* line 342, ../sass/screen.scss */
   .split-view > .page-layout {
     -webkit-transition-property: -webkit-transform;
     transition-property: transform;
@@ -742,21 +829,22 @@ li {
     -webkit-transition-timing-function: ease-in-out;
     transition-timing-function: ease-in-out;
   }
-  /* line 307, ../sass/screen.scss */
-  .split-view > .page-layout:nth-child(1) {
+  /* line 350, ../sass/screen.scss */
+  .split-view > .aside-view {
     width: 276px;
   }
-  /* line 311, ../sass/screen.scss */
-  .split-view > .page-layout:nth-child(2) {
+  /* line 354, ../sass/screen.scss */
+  .split-view > .content-view {
     left: 0;
     width: 100%;
   }
-  /* line 319, ../sass/screen.scss */
-  .split-view.open-menu > .page-layout:nth-child(2) {
+  /* line 362, ../sass/screen.scss */
+  .split-view.open-menu > .content-view {
     -webkit-transform: translateX(276px);
+    transform: translateX(276px);
   }
 
-  /* line 325, ../sass/screen.scss */
+  /* line 369, ../sass/screen.scss */
   .menu-button {
     display: -webkit-box;
     display: -moz-box;
@@ -794,5 +882,10 @@ li {
     -moz-align-items: center;
     -ms-align-items: center;
     align-items: center;
+  }
+
+  /* line 379, ../sass/screen.scss */
+  .no-cssanimations .split-view > .aside-view, .no-csstransforms3d .split-view > .aside-view {
+    position: absolute;
   }
 }

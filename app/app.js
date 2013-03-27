@@ -21,6 +21,17 @@ function($, _, Backbone) {
     if(safari)
       $('html').addClass('iphone-safari');
   }*/
+  var iOSDevice = ( navigator.userAgent.match(/(iPad|iPhone|iPod)/i) ? true : false );
+  if(iOSDevice){
+    $('html').addClass('ios-device');
+
+    var iphone = ( navigator.userAgent.match(/(iPhone|iPod)/i) ? true : false );
+    if(iphone){
+      var safari = ( navigator.userAgent.match(/(Safari)/i) ? true : false );
+      if(safari)
+        $('html').addClass('iphone-safari');
+    }
+  }
 
   Modernizr.addTest("overflowscrolling",function(){
       return Modernizr.testAllProps("overflowScrolling");
