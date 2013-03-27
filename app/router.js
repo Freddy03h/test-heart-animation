@@ -22,7 +22,7 @@ function(app, HomeView, PostView) {
     post: function() {
       app.someModule.views.post = app.someModule.views.post || new PostView();
       app.bodyRegion.currentView.mainRegion.show(app.someModule.views.post);
-    },
+    }
 
 
   });

@@ -85,6 +85,10 @@ p{margin:10px;}
 	}
 }
 
+.overflowscrolling.iphone-safari body{
+	bottom: -60px;
+}
+
 //.cssanimations.csstransforms3d  {
 	body{overflow: hidden !important;}
 	.page-layout{
@@ -375,15 +379,32 @@ $largeurMenu :320px - $height-topbar;
 
 	.no-cssanimations, .no-csstransforms3d{
 		.split-view{
-			//display:block;
 			>.aside-view{
 				position:absolute;
+				display: none;
 			}
 			>.content-view{
-
+				//position:static;
+				//@include flex(0);
 				//left:;
 			}
+			&.open-menu{
+				display:block;
+				>.aside-view{
+					position:static;
+					display: block;
+				}
+				>.content-view{
+					position:absolute;
+					left:$largeurMenu;
+					-webkit-transform: none;
+					transform: none;
+					bottom:0;
+					overflow-y: hidden !important;
+				}
+			}
 		}
+		
 	}
 
 }
