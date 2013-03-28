@@ -30,6 +30,7 @@
 	$orientation: unquote($orientation);
 	$old-orientation : $orientation;
 	@if ($orientation == 'column'){ $old-orientation: vertical; }
+	@if ($orientation == 'row'){ $old-orientation: horizontal; }
 	@include experimental(box-orient, $old-orientation, -moz, -webkit, not -o, -ms, not -khtml);
 	@include experimental(flex-direction, $orientation, -moz, -webkit, not -o, -ms, not -khtml, official);
 }
@@ -74,14 +75,61 @@ html{
 a{text-decoration: none;color:$bleu;}
 p{margin:10px;}
 //#main > div *{-webkit-margin-collapse: separate;}
-#header, #menu-header{
+#menu-header, #header{
 	@include display-flex;
 	@include align-items(center);
+	@include flex-direction(row);
 	p{
 		color:$bleu;
-		margin:10px;
+		margin:0 10px;
 		font-weight: bold;
 		font-size: 32px;
+	}
+	.title{
+		@include flex(1);
+		text-align: center;
+	}
+}
+
+#sub-menu{
+	z-index:10;
+	background-color: rgba(0,0,0,0);
+	@include transition(background-color 100ms ease-in-out 200ms);
+	display:none;
+	//opacity:0;
+	//visibility: hidden;
+	ul{
+		background-color: $bleu;
+		color:black;
+		@include transition(transform 300ms ease-in-out);
+		@include transform(translateY(-100%));
+	}
+	li{
+		background-color: $orangeClair;
+	}
+
+	.open-submenu &{
+		//display:block;
+		//opacity:1;
+		//visibility:visible;
+		background-color: rgba(0,0,0,0.5);
+		@include transition-delay(0ms);
+		ul{
+			@include transform(translateY(0));
+		}
+	}
+}
+.no-cssanimations, .no-csstransforms3d{
+	#sub-menu{
+		@include transition(none);
+		ul{
+			@include transition(none);
+			@include transform(none);
+		}
+		display:none;
+	}
+	.open-submenu &{
+		display:block;
 	}
 }
 
@@ -228,6 +276,18 @@ $largeurMenu :320px - $height-topbar;
 	}
 }
 
+#app .top-bar{
+	z-index:3;
+}
+
+#sub-menu{
+	z-index:2;
+}
+
+#main{
+	z-index:1;
+}
+
 .top-bar{
 	position: absolute;
 	top: 0;
@@ -312,9 +372,25 @@ $largeurMenu :320px - $height-topbar;
 	}
 }
 */
+
+.curtain:before{
+	opacity:1;
+	background-color: rgba(0,0,0,0.5);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	content: "";
+	z-index:10;
+}
+
 /////////////
 
 //#home{
+	ul{
+		overflow: auto;
+	}
 	li{
 		margin:10px;
 		padding: 10px;
@@ -329,13 +405,27 @@ $largeurMenu :320px - $height-topbar;
 	color: white;
 }
 
-.menu-button{
+#menu-one{
 	display: none;
+}
+
+#menu-two{
+	//margin-left:auto;
+}
+
+.menu-button{
+	@include display-flex;
+	@include justify-content(center);
+	@include align-items(center);
 	width: $height-topbar;
 	height: 100%;
-	background-color: $bleu;
-	color:white;
-	
+
+	color: $bleu;
+	background-color:white;
+	&.selected{
+		background-color: $bleu;
+		color:white;
+	}
 	.icon{
 		font-size: 32px;
 	}
@@ -367,13 +457,15 @@ $largeurMenu :320px - $height-topbar;
 				-webkit-transform: translateX($largeurMenu);
 				transform: translateX($largeurMenu);
 			}
+			#menu-one{
+				background-color: $bleu;
+				color:white;
+			}
 		}
 	}
-
-	.menu-button{
+	
+	#menu-one{
 		@include display-flex;
-		@include justify-content(center);
-		@include align-items(center);
 	}
 
 
