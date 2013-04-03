@@ -9,7 +9,8 @@ define([
   //"plugins/backbone.layoutmanager"
   "plugins/jquery.toObject",
   "plugins/backbone.marionette",
-  "plugins/backbone.marionette.animationregion"
+  "plugins/backbone.marionette.animationregion",
+  "plugins/backbone.marionette.scrollableview"
 
 ],
 

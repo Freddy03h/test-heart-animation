@@ -1,13 +1,10 @@
-define([
-  // Application.
-  "app",
-  "text!templates/post.html"
-],
+Backbone.Marionette.ScrollableView = Backbone.Marionette.ItemView.extend({
 
-function(app, template) {
-
-  /*var ScrollableView = Backbone.Marionette.ItemView.extend({
-
+    //className: function(){return "page-layout scrollable";},
+    /*attributes: function(){
+      console.log(this);
+      return {class: "page-layout scrollable"};
+    },*/
     className: "page-layout scrollable",
     events: {
       //'touchstart': 'touchstart',
@@ -17,7 +14,7 @@ function(app, template) {
     initialize : function(){
       // add events from child
       if (this.events)
-        this.events = _.defaults(this.events, ScrollableView.prototype.events);
+        this.events = _.defaults(this.events, Backbone.Marionette.ScrollableView.prototype.events);
 
       this.delegateEvents(this.events);
 
@@ -31,6 +28,12 @@ function(app, template) {
       this.ptrRel = this.ptr.find('.title-release');
       //this.$el.on('touchstart',{self: this},this.touchstart).on('touchmove',{self: this},this.touchmove).on('touchend',{self: this},this.touchend);
     },
+    /*onClose: function(){
+      //this.$el.off('touchstart touchmove touchend');
+    },
+
+    /*touchstart: function(e){
+    },*/
     touchmove: function(e){
       var scrollTop = e.currentTarget.scrollTop;
       var ratio = Math.round(scrollTop*100/60);
@@ -72,34 +75,5 @@ function(app, template) {
         self.ptr.removeClass('loading');
       });
     }
-  });*/
-
-  return Backbone.Marionette.ScrollableView.extend({
-    tagName: "div",
-    id:"post",
-    template: template,
-
-    /*initialize: function(){
-      this.constructor.__super__.initialize.call(this);
-    },
-    onRender: function(){
-      this.constructor.__super__.onRender.call(this);
-    },
-    events:{
-      'click.post': 'example'
-    },
-    example: function(e){
-      console.log('example');
-    },*/
-
-    pullToRefresh: function(){
-      //Fake REFRESH
-      var self = this;
-      setTimeout(function(){
-        self.refreshEnd();
-      },2000, this);
-    }
-
-  });
 
 });
