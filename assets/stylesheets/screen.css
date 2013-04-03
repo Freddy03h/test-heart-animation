@@ -148,27 +148,31 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
   -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
-  -webkit-transform: translate3d(0, 0, 0) rotate(0) scale(1);
 }
-/* line 29, ../sass/_animation-region.scss */
+/* line 31, ../sass/_animation-region.scss */
 .cssanimations.csstransforms3d .animation-region > :not(.current) {
   display: none;
 }
-/* line 88, ../sass/_animation-region.scss */
+/* line 90, ../sass/_animation-region.scss */
 .cssanimations.csstransforms3d .scrollable {
-  position: absolute;
-  width: 100%;
+  /*position: absolute;
+  width:100%;
   top: 0;
   right: 0;
-  left: 0;
-  /*overflow-x: hidden;
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;*/
+  left: 0;*/
+  -webkit-transform: translate3d(0, 0, 0) rotate(0) scale(1);
+  /*overflow-x: hidden !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch;
+  bottom: 0;*/
+}
+/* line 103, ../sass/_animation-region.scss */
+.cssanimations.csstransforms3d .scrollable .wrap {
+  overflow: auto;
   min-height: 100%;
-  -webkit-transform: translate3d(0, 0, 0);
 }
 /* line 111, ../sass/_animation-region.scss */
-.cssanimations.csstransforms3d.overflowscrolling.ios-device .scrollable {
+.cssanimations.csstransforms3d.overflowscrolling.ios-device .scrollable .wrap {
   padding-bottom: 1px;
 }
 /* line 125, ../sass/_animation-region.scss */

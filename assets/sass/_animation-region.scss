@@ -21,7 +21,9 @@
 
 		-webkit-perspective: 1000;
 		-webkit-backface-visibility: hidden;
-		-webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
+		//-webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
+
+        //overflow-y: hidden !important;
         &.scrollable{
             
         }
@@ -86,29 +88,27 @@
         
 	}*/
     .scrollable {
-        //@extend .page-layout;
-        position: absolute;
+        /*position: absolute;
         width:100%;
         top: 0;
         right: 0;
-        left: 0;
-        //bottom: 0;
-        /*overflow-x: hidden;
-        overflow-y: auto;
-        -webkit-overflow-scrolling: touch;*/
+        left: 0;*/
 
-        min-height: 100%;
-        //padding-bottom: 1px;
+        -webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
 
-        //position: relative;
-        //height: 100%;
-        //background: #fff;
-        -webkit-transform: translate3d(0,0,0);
+        /*overflow-x: hidden !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch;
+        bottom: 0;*/
+        .wrap{
+            overflow: auto;
+            min-height: 100%;
+        }
 
-        //background-color: orange;//
     }
+    
     &.overflowscrolling.ios-device{
-        .scrollable {
+        .scrollable .wrap {
             padding-bottom: 1px;
         }
     }
