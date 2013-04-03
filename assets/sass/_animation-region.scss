@@ -123,7 +123,9 @@
     }
     &.overflowscrolling.ios-device{
         .pull-to-refresh {
-            display: block;
+            @include display-flex;
+            @include align-items(center);
+            //display: block;
             height: 60px;
             width: 100%; 
             
@@ -139,9 +141,37 @@
 
             -webkit-transition-property: background-color;
             -webkit-transition-duration: 0.3s;
+            .icon{
+                margin-left:20px;
+                font-size: 40px;
+                &:before{
+                   content:"⇣"; 
+                }
+                
+            }
+            .title-pull, .title-release{
+                font-size: 16px;
+            }
+            .title-release{
+                display:none;
+            }
+            &.loading{
+                position:static;
+                .icon{
+                    &:before{
+                        content:"⚆";
+                    }
+                    -webkit-transform-origin: 50% 50%;
+                    -webkit-animation: rota 1s  linear infinite;
+                }
+            }
         }
     }
 
+}
+@-webkit-keyframes rota {
+    from { -webkit-transform: rotate(-180deg); }
+    to { -webkit-transform: rotate(180deg); }
 }
 
 /*.overflowscrolling.iphone-safari #app{

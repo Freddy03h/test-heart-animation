@@ -13,65 +13,66 @@ function(app, template) {
     template: template,
     events: {
       //'touchstart': 'touchstart',
-      //'touchmove': 'touchmove',
-      //'touchend': 'touchend'
+      'touchmove': 'touchmove',
+      'touchend': 'touchend'
     },
     initialize : function(){
-      console.log(this);
-
       this.isLoading = false;
       this.isActivated = false;
     },
     onRender: function(){
-      console.log(this.$el.parent());
-      console.log(this.$el);
       this.ptr = this.$el.find('.pull-to-refresh');
-      this.$el.parent().on('touchstart',{self: this},this.touchstart).on('touchmove',{self: this},this.touchmove).on('touchend',{self: this},this.touchend);
+      this.ptrIcon = this.ptr.find('.icon');
+      this.ptrPul = this.ptr.find('.title-pull');
+      this.ptrRel = this.ptr.find('.title-release');
+      //this.$el.on('touchstart',{self: this},this.touchstart).on('touchmove',{self: this},this.touchmove).on('touchend',{self: this},this.touchend);
     },
     onClose: function(){
-      this.$el.parent().off('touchstart touchmove touchend');
+      //this.$el.off('touchstart touchmove touchend');
     },
 
-    touchstart: function(e){
-      var self = e.data.self;
-      console.log('touchstart');
-      console.log(this);
-      console.log(self);
-      console.log(e);
-    },
+    /*touchstart: function(e){
+    },*/
     touchmove: function(e){
-      var self = e.data.self;
-      console.log('touchmove');
       var scrollTop = e.currentTarget.scrollTop;
-      var ratio = Math.round(Math.abs(scrollTop*100/60));
-      console.log(ratio+"%");
-      var ratioColor = 255-(ratio/100*255);
-      ratioColor = (ratioColor < 0) ? 0 : ratioColor;
-      console.log(ratioColor);
-      self.ptr.css('background-color','rgb(255,'+ratioColor+','+ratioColor+')');
+      var ratio = Math.round(scrollTop*100/60);
 
-      if(ratio>=100){
-        self.isActivated = true;
+      if(ratio <= -50){
+        var ratioDegree = (Math.abs(ratio)-50)*2;
+        if(ratioDegree > 100) ratioDegree = 100;
+        var degree = -ratioDegree * 180 / 100;
+        this.ptrIcon.css('transform', 'rotate('+ degree + 'deg)');
+      }
+
+      if(ratio <= -100){
+        this.isActivated = true;
+        this.ptrPul.hide();
+        this.ptrRel.show();
       }else{
-        self.isActivated = false;
+        this.ptrRel.hide();
+        this.ptrPul.show();
+        this.isActivated = false;
       }
 
     },
     touchend: function(e){
-      var self = e.data.self;
-      console.log('touchend');
-      console.log(e);
-      if(self.isActivated){
-        self.isActivated = false;
-        self.ptr.css('position', 'static');
-        self.ptr.css('background-color','rgb(0,255,0)');
+      var self = this;
+
+      if(this.isActivated){
+        this.isActivated = false;
+        this.ptr.addClass('loading');
         setTimeout(function(){
-          self.ptr.css('position', 'absolute');
-          self.ptr.css('background-color','rgb(255,255,255)');
-        },2000);
+          self.ptr.animate({
+            height: 0
+          }, 'fast', 'linear', function () {
+            self.ptr.attr('style','');
+            self.ptr.removeClass('loading');
+          });
+        },2000, this);
       }else{
-        self.ptr.css('background-color','rgb(255,255,255)');
+        this.ptrIcon.css('transform', 'rotate(0deg)');
       }
+
     }
 
   });

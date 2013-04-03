@@ -6,9 +6,6 @@
 @import "compass/reset";
 @import "compass/css3";
 
-@import "animation-region";
-
-
 @mixin display-flex{
 	@include experimental-value(display, box, -moz, -webkit, not -o, -ms, not -khtml); 
 	@include experimental-value(display, flexbox, -moz, -webkit, not -o, -ms, not -khtml);
@@ -53,6 +50,8 @@
 	@include experimental(flex-align, $alignment, -moz, -webkit, not -o, -ms, not -khtml);
 	@include experimental(align-items, $alignment, -moz, -webkit, not -o, -ms, not -khtml, official);
 }
+
+@import "animation-region";
 
 
 $bleu:#2B2B67;
