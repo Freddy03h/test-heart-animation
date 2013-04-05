@@ -1,0 +1,44 @@
+@mixin display-flex{
+	@include experimental-value(display, box, -moz, -webkit, not -o, -ms, not -khtml); 
+	@include experimental-value(display, flexbox, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental-value(display, flex, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin flex($flex: $default-box-flex){
+	@include experimental(box-flex, $flex, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(flex, $flex, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin order($group: $default-ordinal-flex-group) {
+	@include experimental(box-ordinal-group, $group, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(flex-order, $group, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(order, $group, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin flex-direction($orientation: $default-box-orient) {
+	$orientation: unquote($orientation);
+	$old-orientation : $orientation;
+	@if ($orientation == 'column'){ $old-orientation: vertical; }
+	@if ($orientation == 'row'){ $old-orientation: horizontal; }
+	@include experimental(box-orient, $old-orientation, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(flex-direction, $orientation, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin flex-wrap($wrap) {
+	$wrap: unquote($wrap);
+	@include experimental(flex-wrap, $wrap, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin justify-content($pack: $default-box-pack) {
+	$pack: unquote($pack);
+	@include experimental(box-pack, $pack, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(flex-pack, $pack, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(justify-content, $pack, -moz, -webkit, not -o, -ms, not -khtml, official);
+}
+
+@mixin align-items($alignment: $default-box-align) {
+	$alignment: unquote($alignment);
+	@include experimental(box-align, $alignment, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(flex-align, $alignment, -moz, -webkit, not -o, -ms, not -khtml);
+	@include experimental(align-items, $alignment, -moz, -webkit, not -o, -ms, not -khtml, official);
+}

@@ -1,11 +1,11 @@
-Backbone.Marionette.ScrollableView = Backbone.Marionette.ItemView.extend({
+Backbone.Marionette.PullableView = Backbone.Marionette.ItemView.extend({
 
     //className: function(){return "page-layout scrollable";},
     /*attributes: function(){
       console.log(this);
       return {class: "page-layout scrollable"};
     },*/
-    className: "page-layout scrollable",
+    className: "scrollable",
     events: {
       //'touchstart': 'touchstart',
       'touchmove.pulltorefresh': 'touchmove',
@@ -14,7 +14,7 @@ Backbone.Marionette.ScrollableView = Backbone.Marionette.ItemView.extend({
     initialize : function(){
       // add events from child
       if (this.events)
-        this.events = _.defaults(this.events, Backbone.Marionette.ScrollableView.prototype.events);
+        this.events = _.defaults(this.events, Backbone.Marionette.PullableView.prototype.events);
 
       this.delegateEvents(this.events);
 
@@ -22,11 +22,13 @@ Backbone.Marionette.ScrollableView = Backbone.Marionette.ItemView.extend({
       this.isActivated = false;
     },
     onRender: function(){
-      this.ptr = this.$el.find('.pull-to-refresh');
+      this.ptr = $('<div class="pull-to-refresh"><p class="icon"></p><p class="title-pull">Tirer pour actualiser</p><p class="title-release">Relâcher pour actualiser</p></div>');
+      //this.ptr = this.$el.find('.pull-to-refresh');
       this.ptrIcon = this.ptr.find('.icon');
       this.ptrPul = this.ptr.find('.title-pull');
       this.ptrRel = this.ptr.find('.title-release');
       //this.$el.on('touchstart',{self: this},this.touchstart).on('touchmove',{self: this},this.touchmove).on('touchend',{self: this},this.touchend);
+      this.$el.find('.wrap').before(this.ptr);
     },
     /*onClose: function(){
       //this.$el.off('touchstart touchmove touchend');

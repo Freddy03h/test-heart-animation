@@ -10,7 +10,7 @@ define([
   "plugins/jquery.toObject",
   "plugins/backbone.marionette",
   "plugins/backbone.marionette.animationregion",
-  "plugins/backbone.marionette.scrollableview"
+  "plugins/backbone.marionette.pullableview"
 
 ],
 
@@ -66,8 +66,21 @@ function($, _, Backbone) {
   });
 
   app.addRegions({
-    bodyRegion: 'body'
+    appRegion: '#app'
   });
+
+  app.overlay = $("#overlay");
+  app.setOverlay = function (bool) {
+    if (!bool) {
+      app.overlay.addClass('closing');
+      setTimeout(function () {
+        app.overlay.addClass('closed');
+      }, 300);
+    } else {
+      app.overlay.removeClass('closed');
+      app.overlay.removeClass('closing');
+    }
+  };
 
   return app;
 

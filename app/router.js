@@ -16,12 +16,12 @@ function(app, HomeView, PostView) {
 
     index: function() {
       app.someModule.views.home = app.someModule.views.home || new HomeView();
-      app.bodyRegion.currentView.mainRegion.show(app.someModule.views.home);
+      app.appRegion.currentView.mainRegion.show(app.someModule.views.home);
     },
 
     post: function() {
       app.someModule.views.post = app.someModule.views.post || new PostView();
-      app.bodyRegion.currentView.mainRegion.show(app.someModule.views.post);
+      app.appRegion.currentView.mainRegion.show(app.someModule.views.post);
     }
 
 

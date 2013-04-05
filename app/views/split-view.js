@@ -51,7 +51,7 @@ function(app, template, MenuView) {
         submenu.show();
       }
       setTimeout(function(){
-        self.$el.find('#app').toggleClass('open-submenu');
+        self.$el.find('#content').toggleClass('open-submenu');
       },10);
     }
 

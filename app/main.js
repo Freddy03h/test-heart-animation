@@ -11,7 +11,7 @@ require([
 function(app, Router, SplitView) {
 
   app.someModule.views.split = new SplitView();
-  app.bodyRegion.show(app.someModule.views.split);
+  app.appRegion.show(app.someModule.views.split);
 
   // Define your master router on the application namespace and trigger all
   // navigation from this instance.
@@ -30,7 +30,7 @@ function(app, Router, SplitView) {
     // Get the absolute root.
     var root = location.protocol + "//" + location.host + app.root;
 
-    app.bodyRegion.currentView.mainRegion.animation = evt.currentTarget.getAttribute('data-animation') || 'dissolve';
+    app.appRegion.currentView.mainRegion.animation = evt.currentTarget.getAttribute('data-animation') || 'dissolve';
 
     // Ensure the root is part of the anchor href, meaning it's relative.
     if (href.prop.slice(0, root.length) === root) {

@@ -9,7 +9,7 @@ function(app, template) {
   return Backbone.Marionette.ItemView.extend({
     tagName: "div",
     id:"menu",
-    className: "page-layout scrollable",
+    className: "scrollable",
     template: template,
     events: {
     },
