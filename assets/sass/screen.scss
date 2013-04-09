@@ -71,6 +71,9 @@ p{margin:10px;}
 			@include transform(translateY(0));
 		}
 	}
+	&.displayed{
+		display:block;
+	}
 }
 .no-cssanimations, .no-csstransforms3d{
 	#sub-menu{

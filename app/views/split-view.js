@@ -21,7 +21,7 @@ function(app, template, MenuView) {
     },
     events: {
       'click #menu-one': 'openMenu',
-      'click #menu-two': 'openSubMenu',
+      'click #menu-two': 'toggleSubMenu',
       'click #menu a': 'openMenu'
     },
     initialize : function(e){
@@ -30,13 +30,16 @@ function(app, template, MenuView) {
     },
     onRender: function(){
       this.menuRegion.show(this.menuView);
+
+      this.submenuEl = this.$el.find('#sub-menu');
+      this.contentEl = this.$el.find('#content');
     },
     openMenu: function(e){
       this.$el.toggleClass('open-menu');
     },
-    openSubMenu: function(e){
+    /*openSubMenu: function(e){
       var self = this;
-      var submenu = this.$el.find('#sub-menu');
+      var submenu = this.submenuEl;
       $(e.currentTarget).toggleClass('selected');
       if(submenu.is(":visible")){
         if(this.has3d){
@@ -53,6 +56,48 @@ function(app, template, MenuView) {
       setTimeout(function(){
         self.$el.find('#content').toggleClass('open-submenu');
       },10);
+    },*/
+
+    toggleSubMenu: function(e){
+      var self = this;
+      var submenu = this.submenuEl;
+
+      $(e.currentTarget).toggleClass('selected');
+
+      if(submenu.hasClass('displayed')){
+        self.closeSubMenu(e);
+      }else{
+        self.openSubMenu(e);
+      }
+      /*setTimeout(function(){
+        menu.toggleClass('open-menu');
+      },10);*/
+    },
+
+    closeSubMenu: function(e){
+      var self = this;
+        var submenu = this.submenuEl;
+
+        if(this.has3d){
+          submenu.on('webkitTransitionEnd transitionEnd', function(e){
+            submenu.off('webkitTransitionEnd transitionEnd');
+            submenu.removeClass('displayed');
+          });
+        }else{
+          submenu.removeClass('displayed');
+        }
+        setTimeout(function(){
+            self.contentEl.removeClass('open-submenu');
+        },10);
+    },
+    openSubMenu: function(e){
+      var self = this;
+        var submenu = this.submenuEl;
+
+        submenu.addClass('displayed');
+        setTimeout(function(){
+            self.contentEl.addClass('open-submenu');
+        },10);
     }
 
   });
