@@ -75,7 +75,7 @@ p{margin:10px;}
 		display:block;
 	}
 }
-.no-cssanimations, .no-csstransforms3d{
+.no-cssanimations, .no-csstransforms3d, .no-positionfixed{
 	#sub-menu{
 		@include transition(none);
 		ul{
@@ -89,8 +89,12 @@ p{margin:10px;}
 	}
 }
 
-.overflowscrolling.iphone-safari body{
+.overflowscrolling.appleios.safari body{
 	bottom: -60px;
+}
+.pull-to-refresh {
+	color:white;
+    background-color: grey;
 }
 
 $largeurMenu :320px - $height-topbar;
@@ -273,7 +277,7 @@ $largeurMenu :320px - $height-topbar;
 	}
 
 
-	.no-cssanimations, .no-csstransforms3d{
+	.no-cssanimations, .no-csstransforms3d, .no-positionfixed{
 		.split-view{
 			>.aside-view{
 				position:absolute;

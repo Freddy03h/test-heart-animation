@@ -69,12 +69,12 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 }
 
 /* line 1, ../sass/_heart.scss */
-body.page-layout, .cssanimations.csstransforms3d body.scrollable {
+body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable {
   overflow: hidden;
 }
 
 /* line 2, ../sass/_heart.scss */
-.page-layout, .cssanimations.csstransforms3d .scrollable {
+.page-layout, .cssanimations.csstransforms3d.positionfixed .scrollable {
   position: absolute;
   top: 0;
   right: 0;
@@ -85,11 +85,11 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
   -webkit-overflow-scrolling: touch;
 }
 /* line 14, ../sass/_heart.scss */
-.page-layout.with-topbar, .cssanimations.csstransforms3d .with-topbar.scrollable {
+.page-layout.with-topbar, .cssanimations.csstransforms3d.positionfixed .with-topbar.scrollable {
   top: 44px;
 }
 /* line 17, ../sass/_heart.scss */
-.page-layout.with-bottombar, .cssanimations.csstransforms3d .with-bottombar.scrollable {
+.page-layout.with-bottombar, .cssanimations.csstransforms3d.positionfixed .with-bottombar.scrollable {
   bottom: 50px;
 }
 
@@ -112,11 +112,11 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
 }
 
 /* line 38, ../sass/_heart.scss */
-.no-cssanimations, .no-cssanimations body, .no-csstransforms3d, .no-csstransforms3d body {
+.no-cssanimations, .no-cssanimations body, .no-csstransforms3d, .no-csstransforms3d body, .no-positionfixed, .no-positionfixed body {
   height: 100%;
 }
 /* line 39, ../sass/_heart.scss */
-.no-cssanimations .page-layout, .no-cssanimations .cssanimations.csstransforms3d .scrollable, .cssanimations.csstransforms3d .no-cssanimations .scrollable, .no-csstransforms3d .page-layout, .no-csstransforms3d .cssanimations.csstransforms3d .scrollable, .cssanimations.csstransforms3d .no-csstransforms3d .scrollable {
+.no-cssanimations .page-layout, .no-cssanimations .cssanimations.csstransforms3d.positionfixed .scrollable, .cssanimations.csstransforms3d.positionfixed .no-cssanimations .scrollable, .no-csstransforms3d .page-layout, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed .scrollable, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d .scrollable, .no-positionfixed .page-layout, .no-positionfixed .cssanimations.csstransforms3d.positionfixed .scrollable, .cssanimations.csstransforms3d.positionfixed .no-positionfixed .scrollable {
   position: relative;
   bottom: auto;
   padding-top: 0;
@@ -124,7 +124,7 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
   overflow-y: visible;
 }
 /* line 46, ../sass/_heart.scss */
-.no-cssanimations .split-view, .no-csstransforms3d .split-view {
+.no-cssanimations .split-view, .no-csstransforms3d .split-view, .no-positionfixed .split-view {
   min-height: 100%;
   display: -webkit-box;
   display: -moz-box;
@@ -140,7 +140,7 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
   display: flex;
 }
 /* line 49, ../sass/_heart.scss */
-.no-cssanimations .split-view > .page-layout, .no-cssanimations .cssanimations.csstransforms3d .split-view > .scrollable, .cssanimations.csstransforms3d .no-cssanimations .split-view > .scrollable, .no-csstransforms3d .split-view > .page-layout, .no-csstransforms3d .cssanimations.csstransforms3d .split-view > .scrollable, .cssanimations.csstransforms3d .no-csstransforms3d .split-view > .scrollable {
+.no-cssanimations .split-view > .page-layout, .no-cssanimations .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable, .cssanimations.csstransforms3d.positionfixed .no-cssanimations .split-view > .scrollable, .no-csstransforms3d .split-view > .page-layout, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d .split-view > .scrollable, .no-positionfixed .split-view > .page-layout, .no-positionfixed .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable, .cssanimations.csstransforms3d.positionfixed .no-positionfixed .split-view > .scrollable {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -163,7 +163,7 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
   flex-direction: column;
 }
 /* line 52, ../sass/_heart.scss */
-.no-cssanimations .split-view > .page-layout > .page-layout, .no-cssanimations .cssanimations.csstransforms3d .split-view > .scrollable > .page-layout, .cssanimations.csstransforms3d .no-cssanimations .split-view > .scrollable > .page-layout, .no-cssanimations .cssanimations.csstransforms3d .split-view > .page-layout > .scrollable, .cssanimations.csstransforms3d .no-cssanimations .split-view > .page-layout > .scrollable, .no-cssanimations .cssanimations.csstransforms3d .split-view > .scrollable > .scrollable, .cssanimations.csstransforms3d .no-cssanimations .split-view > .scrollable > .scrollable, .no-csstransforms3d .split-view > .page-layout > .page-layout, .no-csstransforms3d .cssanimations.csstransforms3d .split-view > .scrollable > .page-layout, .cssanimations.csstransforms3d .no-csstransforms3d .split-view > .scrollable > .page-layout, .no-csstransforms3d .cssanimations.csstransforms3d .split-view > .page-layout > .scrollable, .cssanimations.csstransforms3d .no-csstransforms3d .split-view > .page-layout > .scrollable, .no-csstransforms3d .cssanimations.csstransforms3d .split-view > .scrollable > .scrollable, .cssanimations.csstransforms3d .no-csstransforms3d .split-view > .scrollable > .scrollable {
+.no-cssanimations .split-view > .page-layout > .page-layout, .no-cssanimations .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable > .page-layout, .cssanimations.csstransforms3d.positionfixed .no-cssanimations .split-view > .scrollable > .page-layout, .no-cssanimations .cssanimations.csstransforms3d.positionfixed .split-view > .page-layout > .scrollable, .cssanimations.csstransforms3d.positionfixed .no-cssanimations .split-view > .page-layout > .scrollable, .no-cssanimations .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable > .scrollable, .cssanimations.csstransforms3d.positionfixed .no-cssanimations .split-view > .scrollable > .scrollable, .no-csstransforms3d .split-view > .page-layout > .page-layout, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable > .page-layout, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d .split-view > .scrollable > .page-layout, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed .split-view > .page-layout > .scrollable, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d .split-view > .page-layout > .scrollable, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable > .scrollable, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d .split-view > .scrollable > .scrollable, .no-positionfixed .split-view > .page-layout > .page-layout, .no-positionfixed .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable > .page-layout, .cssanimations.csstransforms3d.positionfixed .no-positionfixed .split-view > .scrollable > .page-layout, .no-positionfixed .cssanimations.csstransforms3d.positionfixed .split-view > .page-layout > .scrollable, .cssanimations.csstransforms3d.positionfixed .no-positionfixed .split-view > .page-layout > .scrollable, .no-positionfixed .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable > .scrollable, .cssanimations.csstransforms3d.positionfixed .no-positionfixed .split-view > .scrollable > .scrollable {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
   -ms-box-flex: 1;
@@ -174,12 +174,12 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
   flex: 1;
 }
 /* line 57, ../sass/_heart.scss */
-.no-cssanimations .split-view > .aside-view, .no-csstransforms3d .split-view > .aside-view {
+.no-cssanimations .split-view > .aside-view, .no-csstransforms3d .split-view > .aside-view, .no-positionfixed .split-view > .aside-view {
   position: relative;
   min-height: 100%;
 }
 /* line 61, ../sass/_heart.scss */
-.no-cssanimations .split-view > .content-view, .no-csstransforms3d .split-view > .content-view {
+.no-cssanimations .split-view > .content-view, .no-csstransforms3d .split-view > .content-view, .no-positionfixed .split-view > .content-view {
   left: auto;
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -191,11 +191,11 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
   flex: 1;
 }
 /* line 65, ../sass/_heart.scss */
-.no-cssanimations .top-bar, .no-csstransforms3d .top-bar {
+.no-cssanimations .top-bar, .no-csstransforms3d .top-bar, .no-positionfixed .top-bar {
   position: static;
 }
 /* line 68, ../sass/_heart.scss */
-.no-cssanimations .page-layout.with-topbar, .no-cssanimations .cssanimations.csstransforms3d .with-topbar.scrollable, .cssanimations.csstransforms3d .no-cssanimations .with-topbar.scrollable, .no-csstransforms3d .page-layout.with-topbar, .no-csstransforms3d .cssanimations.csstransforms3d .with-topbar.scrollable, .cssanimations.csstransforms3d .no-csstransforms3d .with-topbar.scrollable {
+.no-cssanimations .page-layout.with-topbar, .no-cssanimations .cssanimations.csstransforms3d.positionfixed .with-topbar.scrollable, .cssanimations.csstransforms3d.positionfixed .no-cssanimations .with-topbar.scrollable, .no-csstransforms3d .page-layout.with-topbar, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed .with-topbar.scrollable, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d .with-topbar.scrollable, .no-positionfixed .page-layout.with-topbar, .no-positionfixed .cssanimations.csstransforms3d.positionfixed .with-topbar.scrollable, .cssanimations.csstransforms3d.positionfixed .no-positionfixed .with-topbar.scrollable {
   top: auto;
 }
 
@@ -217,20 +217,20 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
 }
 
 /* line 86, ../sass/_heart.scss */
-.cssanimations.csstransforms3d .scrollable {
+.cssanimations.csstransforms3d.positionfixed .scrollable {
   -webkit-transform: translate3d(0, 0, 0) rotate(0) scale(1);
 }
 /* line 89, ../sass/_heart.scss */
-.cssanimations.csstransforms3d .scrollable .wrap {
+.cssanimations.csstransforms3d.positionfixed .scrollable .wrap {
   overflow: auto;
   min-height: 100%;
 }
 /* line 97, ../sass/_heart.scss */
-.cssanimations.csstransforms3d.overflowscrolling.ios-device .scrollable .wrap {
+.cssanimations.csstransforms3d.positionfixed.overflowscrolling.appleios .scrollable .wrap {
   padding-bottom: 1px;
 }
 /* line 100, ../sass/_heart.scss */
-.cssanimations.csstransforms3d.overflowscrolling.ios-device .pull-to-refresh {
+.cssanimations.csstransforms3d.positionfixed.overflowscrolling.appleios .pull-to-refresh {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-box;
@@ -262,40 +262,36 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
   top: -60px;
   overflow: auto;
   z-index: -1;
-  color: white;
-  background-color: grey;
-  -webkit-transition-property: background-color;
-  -webkit-transition-duration: 0.3s;
 }
-/* line 118, ../sass/_heart.scss */
-.cssanimations.csstransforms3d.overflowscrolling.ios-device .pull-to-refresh .icon {
+/* line 113, ../sass/_heart.scss */
+.cssanimations.csstransforms3d.positionfixed.overflowscrolling.appleios .pull-to-refresh .icon {
   margin-left: 20px;
   font-size: 40px;
 }
-/* line 121, ../sass/_heart.scss */
-.cssanimations.csstransforms3d.overflowscrolling.ios-device .pull-to-refresh .icon:before {
+/* line 116, ../sass/_heart.scss */
+.cssanimations.csstransforms3d.positionfixed.overflowscrolling.appleios .pull-to-refresh .icon:before {
   content: "⇣";
 }
-/* line 126, ../sass/_heart.scss */
-.cssanimations.csstransforms3d.overflowscrolling.ios-device .pull-to-refresh .title-pull, .cssanimations.csstransforms3d.overflowscrolling.ios-device .pull-to-refresh .title-release {
+/* line 121, ../sass/_heart.scss */
+.cssanimations.csstransforms3d.positionfixed.overflowscrolling.appleios .pull-to-refresh .title-pull, .cssanimations.csstransforms3d.positionfixed.overflowscrolling.appleios .pull-to-refresh .title-release {
   font-size: 16px;
 }
-/* line 129, ../sass/_heart.scss */
-.cssanimations.csstransforms3d.overflowscrolling.ios-device .pull-to-refresh .title-release {
+/* line 124, ../sass/_heart.scss */
+.cssanimations.csstransforms3d.positionfixed.overflowscrolling.appleios .pull-to-refresh .title-release {
   display: none;
 }
-/* line 132, ../sass/_heart.scss */
-.cssanimations.csstransforms3d.overflowscrolling.ios-device .pull-to-refresh.loading {
+/* line 127, ../sass/_heart.scss */
+.cssanimations.csstransforms3d.positionfixed.overflowscrolling.appleios .pull-to-refresh.loading {
   position: static;
 }
-/* line 134, ../sass/_heart.scss */
-.cssanimations.csstransforms3d.overflowscrolling.ios-device .pull-to-refresh.loading .icon {
+/* line 129, ../sass/_heart.scss */
+.cssanimations.csstransforms3d.positionfixed.overflowscrolling.appleios .pull-to-refresh.loading .icon {
   -webkit-transform-origin: 50% 50%;
   -webkit-animation: rotationPullToRefresh 1s  linear infinite;
 }
-/* line 135, ../sass/_heart.scss */
-.cssanimations.csstransforms3d.overflowscrolling.ios-device .pull-to-refresh.loading .icon:before {
-  content: "⚆";
+/* line 130, ../sass/_heart.scss */
+.cssanimations.csstransforms3d.positionfixed.overflowscrolling.appleios .pull-to-refresh.loading .icon:before {
+  content: "↻";
 }
 
 /* line 1, ../sass/_animation-region.scss */
@@ -304,13 +300,13 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
 }
 
 /* line 7, ../sass/_animation-region.scss */
-.cssanimations.csstransforms3d .animation-region {
+.cssanimations.csstransforms3d.positionfixed .animation-region {
   perspective: 1000;
   transform-style: preserve-3d;
   overflow: hidden;
 }
 /* line 12, ../sass/_animation-region.scss */
-.cssanimations.csstransforms3d .animation-region > * {
+.cssanimations.csstransforms3d.positionfixed .animation-region > * {
   width: 100%;
   position: absolute;
   display: block;
@@ -318,7 +314,7 @@ body.page-layout, .cssanimations.csstransforms3d body.scrollable {
   -webkit-backface-visibility: hidden;
 }
 /* line 20, ../sass/_animation-region.scss */
-.cssanimations.csstransforms3d .animation-region > :not(.current) {
+.cssanimations.csstransforms3d.positionfixed .animation-region > :not(.current) {
   display: none;
 }
 
@@ -669,7 +665,7 @@ p {
 }
 
 /* line 79, ../sass/screen.scss */
-.no-cssanimations #sub-menu, .no-csstransforms3d #sub-menu {
+.no-cssanimations #sub-menu, .no-csstransforms3d #sub-menu, .no-positionfixed #sub-menu {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -677,7 +673,7 @@ p {
   display: none;
 }
 /* line 81, ../sass/screen.scss */
-.no-cssanimations #sub-menu ul, .no-csstransforms3d #sub-menu ul {
+.no-cssanimations #sub-menu ul, .no-csstransforms3d #sub-menu ul, .no-positionfixed #sub-menu ul {
   -webkit-transition: none;
   -moz-transition: none;
   -o-transition: none;
@@ -689,42 +685,48 @@ p {
   transform: none;
 }
 /* line 87, ../sass/screen.scss */
-.open-submenu .no-cssanimations, .open-submenu .no-csstransforms3d {
+.open-submenu .no-cssanimations, .open-submenu .no-csstransforms3d, .open-submenu .no-positionfixed {
   display: block;
 }
 
 /* line 92, ../sass/screen.scss */
-.overflowscrolling.iphone-safari body {
+.overflowscrolling.appleios.safari body {
   bottom: -60px;
 }
 
-/* line 98, ../sass/screen.scss */
+/* line 95, ../sass/screen.scss */
+.pull-to-refresh {
+  color: white;
+  background-color: grey;
+}
+
+/* line 102, ../sass/screen.scss */
 .split-view > .aside-view {
   width: 276px;
   z-index: 1;
 }
-/* line 102, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .split-view > .content-view {
   left: 276px;
   z-index: 2;
 }
 
-/* line 110, ../sass/screen.scss */
+/* line 114, ../sass/screen.scss */
 #content .top-bar {
   z-index: 3;
 }
 
-/* line 114, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 #sub-menu {
   z-index: 2;
 }
 
-/* line 118, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 #main {
   z-index: 1;
 }
 
-/* line 122, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 #header {
   background-color: #FFF;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -732,7 +734,7 @@ p {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-/* line 128, ../sass/screen.scss */
+/* line 132, ../sass/screen.scss */
 #menu-header {
   z-index: 2;
   background-color: lavender;
@@ -741,12 +743,12 @@ p {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-/* line 135, ../sass/screen.scss */
+/* line 139, ../sass/screen.scss */
 #menu-main {
   background-color: white;
 }
 
-/* line 139, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 #content {
   background-color: #F4F4F4;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -754,7 +756,7 @@ p {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* line 144, ../sass/screen.scss */
+/* line 148, ../sass/screen.scss */
 #tab-bar {
   background-color: #FFF;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -785,7 +787,7 @@ p {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 151, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 #tab-bar > * {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -828,23 +830,23 @@ p {
   -ms-align-items: center;
   align-items: center;
 }
-/* line 157, ../sass/screen.scss */
+/* line 161, ../sass/screen.scss */
 #tab-bar > *.selected {
   background-color: #2b2b67;
   color: white;
 }
-/* line 161, ../sass/screen.scss */
+/* line 165, ../sass/screen.scss */
 #tab-bar > * > * {
   display: block;
 }
-/* line 164, ../sass/screen.scss */
+/* line 168, ../sass/screen.scss */
 #tab-bar > * > *.icon {
   font-size: 32px;
   padding: 2px 0;
   height: 32px;
   box-sizing: border-box;
 }
-/* line 170, ../sass/screen.scss */
+/* line 174, ../sass/screen.scss */
 #tab-bar > * > *.title {
   font-size: 14px;
   padding: 2px 0;
@@ -852,7 +854,7 @@ p {
   box-sizing: border-box;
 }
 
-/* line 180, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 .curtain:before {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.5);
@@ -865,12 +867,12 @@ p {
   z-index: 10;
 }
 
-/* line 195, ../sass/screen.scss */
+/* line 199, ../sass/screen.scss */
 ul {
   overflow: auto;
 }
 
-/* line 198, ../sass/screen.scss */
+/* line 202, ../sass/screen.scss */
 li {
   margin: 10px;
   padding: 10px;
@@ -883,18 +885,18 @@ li {
   background-color: lavender;
 }
 
-/* line 207, ../sass/screen.scss */
+/* line 211, ../sass/screen.scss */
 #menu-main li {
   background-color: #2b2b67;
   color: white;
 }
 
-/* line 212, ../sass/screen.scss */
+/* line 216, ../sass/screen.scss */
 #menu-one {
   display: none;
 }
 
-/* line 220, ../sass/screen.scss */
+/* line 224, ../sass/screen.scss */
 .menu-button {
   display: -webkit-box;
   display: -moz-box;
@@ -937,19 +939,19 @@ li {
   color: #2b2b67;
   background-color: white;
 }
-/* line 229, ../sass/screen.scss */
+/* line 233, ../sass/screen.scss */
 .menu-button.selected {
   background-color: #2b2b67;
   color: white;
 }
-/* line 233, ../sass/screen.scss */
+/* line 237, ../sass/screen.scss */
 .menu-button .icon {
   font-size: 32px;
 }
 
 @media screen and (max-width: 570px) {
-  /* line 240, ../sass/screen.scss */
-  .split-view > .page-layout, .cssanimations.csstransforms3d .split-view > .scrollable {
+  /* line 244, ../sass/screen.scss */
+  .split-view > .page-layout, .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable {
     -webkit-transition-property: -webkit-transform;
     transition-property: transform;
     -webkit-transition-duration: 300ms;
@@ -957,27 +959,27 @@ li {
     -webkit-transition-timing-function: ease-in-out;
     transition-timing-function: ease-in-out;
   }
-  /* line 248, ../sass/screen.scss */
+  /* line 252, ../sass/screen.scss */
   .split-view > .aside-view {
     width: 276px;
   }
-  /* line 252, ../sass/screen.scss */
+  /* line 256, ../sass/screen.scss */
   .split-view > .content-view {
     left: 0;
     width: 100%;
   }
-  /* line 260, ../sass/screen.scss */
+  /* line 264, ../sass/screen.scss */
   .split-view.open-menu > .content-view {
     -webkit-transform: translateX(276px);
     transform: translateX(276px);
   }
-  /* line 264, ../sass/screen.scss */
+  /* line 268, ../sass/screen.scss */
   .split-view.open-menu #menu-one {
     background-color: #2b2b67;
     color: white;
   }
 
-  /* line 271, ../sass/screen.scss */
+  /* line 275, ../sass/screen.scss */
   #menu-one {
     display: -webkit-box;
     display: -moz-box;
@@ -993,22 +995,22 @@ li {
     display: flex;
   }
 
-  /* line 278, ../sass/screen.scss */
-  .no-cssanimations .split-view > .aside-view, .no-csstransforms3d .split-view > .aside-view {
+  /* line 282, ../sass/screen.scss */
+  .no-cssanimations .split-view > .aside-view, .no-csstransforms3d .split-view > .aside-view, .no-positionfixed .split-view > .aside-view {
     position: absolute;
     display: none;
   }
-  /* line 287, ../sass/screen.scss */
-  .no-cssanimations .split-view.open-menu, .no-csstransforms3d .split-view.open-menu {
-    display: block;
-  }
-  /* line 289, ../sass/screen.scss */
-  .no-cssanimations .split-view.open-menu > .aside-view, .no-csstransforms3d .split-view.open-menu > .aside-view {
-    position: static;
+  /* line 291, ../sass/screen.scss */
+  .no-cssanimations .split-view.open-menu, .no-csstransforms3d .split-view.open-menu, .no-positionfixed .split-view.open-menu {
     display: block;
   }
   /* line 293, ../sass/screen.scss */
-  .no-cssanimations .split-view.open-menu > .content-view, .no-csstransforms3d .split-view.open-menu > .content-view {
+  .no-cssanimations .split-view.open-menu > .aside-view, .no-csstransforms3d .split-view.open-menu > .aside-view, .no-positionfixed .split-view.open-menu > .aside-view {
+    position: static;
+    display: block;
+  }
+  /* line 297, ../sass/screen.scss */
+  .no-cssanimations .split-view.open-menu > .content-view, .no-csstransforms3d .split-view.open-menu > .content-view, .no-positionfixed .split-view.open-menu > .content-view {
     position: absolute;
     left: 276px;
     -webkit-transform: none;
@@ -1017,17 +1019,17 @@ li {
     overflow-y: hidden;
   }
 }
-/* line 312, ../sass/screen.scss */
+/* line 316, ../sass/screen.scss */
 #overlay.closing {
   opacity: 0;
 }
 
-/* line 315, ../sass/screen.scss */
+/* line 319, ../sass/screen.scss */
 #overlay.closed {
   display: none;
 }
 
-/* line 318, ../sass/screen.scss */
+/* line 322, ../sass/screen.scss */
 #overlay {
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;

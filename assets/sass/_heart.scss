@@ -34,7 +34,7 @@ body.page-layout{overflow: hidden;}
 }
 
 //FALLBACK OLD BROWSER (like Android 2.X)
-.no-cssanimations, .no-csstransforms3d{
+.no-cssanimations, .no-csstransforms3d, .no-positionfixed{
 	&, body{height:100%;}
 	.page-layout{
 		position: relative;
@@ -82,7 +82,7 @@ body.page-layout{overflow: hidden;}
     to { -webkit-transform: rotate(180deg); }
 }
 
-.cssanimations.csstransforms3d  {
+.cssanimations.csstransforms3d.positionfixed  {
 	.scrollable {
 		@extend .page-layout;
         -webkit-transform: translate3d(0,0,0) rotate(0) scale(1);
@@ -93,7 +93,7 @@ body.page-layout{overflow: hidden;}
 
     }
     
-    &.overflowscrolling.ios-device{
+    &.overflowscrolling.appleios{
         .scrollable .wrap {
             padding-bottom: 1px;
         }
@@ -110,11 +110,6 @@ body.page-layout{overflow: hidden;}
             overflow: auto;
 
             z-index: -1;
-            color:white;
-            background-color: grey;
-
-            -webkit-transition-property: background-color;
-            -webkit-transition-duration: 0.3s;
             .icon{
                 margin-left:20px;
                 font-size: 40px;
@@ -133,7 +128,7 @@ body.page-layout{overflow: hidden;}
                 position:static;
                 .icon{
                     &:before{
-                        content:"⚆";
+                        content:"↻";
                     }
                     -webkit-transform-origin: 50% 50%;
                     -webkit-animation: rotationPullToRefresh 1s  linear infinite;

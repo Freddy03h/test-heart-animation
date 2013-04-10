@@ -33,7 +33,9 @@ require.config({
 
     "plugins/backbone.marionette.animationregion": ["plugins/backbone.marionette"],
 
-    "plugins/backbone.marionette.pullableview": ["plugins/backbone.marionette"]
+    "plugins/backbone.marionette.pullableview": ["plugins/backbone.marionette"],
+
+    "plugins/modernizr.test": ["modernizr"]
   }
 
 });
