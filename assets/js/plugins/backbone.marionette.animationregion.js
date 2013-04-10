@@ -10,8 +10,7 @@ Backbone.Marionette.AnimationRegion = Backbone.Marionette.Region.extend({
   initialize: function(){
     this.animation = 'dissolve';
     //cssanimations csstransforms3d
-    this.has3d = (Modernizr.cssanimations && Modernizr.csstransforms3d);
-    
+    this.has3d = (Modernizr.cssanimations && Modernizr.csstransforms3d && Modernizr.positionfixed);
     //this.has3d = (Modernizr.overflowscrolling && (typeof window.WebKitAnimationEvent != 'undefined') && ('WebKitCSSMatrix' in window && 'm11' in new WebKitCSSMatrix()));
   },
 

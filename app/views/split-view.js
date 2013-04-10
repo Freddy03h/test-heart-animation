@@ -26,7 +26,7 @@ function(app, template, MenuView) {
     },
     initialize : function(e){
       this.menuView = new MenuView();
-      this.has3d = (Modernizr.cssanimations && Modernizr.csstransforms3d);
+      this.has3d = (Modernizr.cssanimations && Modernizr.csstransforms3d && Modernizr.positionfixed);
     },
     onRender: function(){
       this.menuRegion.show(this.menuView);
