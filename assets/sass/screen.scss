@@ -84,9 +84,10 @@ p{margin:10px;}
 		}
 		display:none;
 	}
-	.open-submenu &{
+	.open-submenu #sub-menu{
 		display:block;
 	}
+	
 }
 
 .overflowscrolling.appleios.safari body{
