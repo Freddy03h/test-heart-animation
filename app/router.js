@@ -1,28 +1,36 @@
 define([
   // Application.
   "app",
+  "models/tweet-collection",
   "views/home",
   "views/post"
 ],
 
-function(app, HomeView, PostView) {
+function(app, TweetCollection, HomeView, PostView) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
     routes: {
       "": "index",
+      "keyword/:keyword": "index",
       "post": "post"
     },
-    index: function() {
+    index: function(keyword) {
+      keyword = keyword || 'javascript';
+
+      var tweets = new TweetCollection([],{
+        q: keyword
+      });
 
       app.appRegion.currentView.mainRegion.show(new Backbone.Marionette.PullableLayout({
-        id: "home-pullable",
+        id: "home-pullable-"+keyword,
         view: new HomeView({
-          collection: app.someModule.models.tweets
+          collection: tweets,
+          model: new Backbone.Model({title: keyword})
         })
       }));
 
-      app.someModule.models.tweets.fetch();
+      tweets.fetch();
 
     },
     post: function() {

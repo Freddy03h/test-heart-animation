@@ -5,14 +5,11 @@ require([
   // Main Router.
   "router",
 
-  "models/tweet-collection",
-
   "views/split-view"
 ],
 
-function(app, Router, TweetCollection, SplitView) {
+function(app, Router, SplitView) {
 
-  app.someModule.models.tweets = new TweetCollection();
   app.someModule.models.keywords = new Backbone.Collection([
     {
       title: "javascript"

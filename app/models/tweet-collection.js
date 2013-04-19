@@ -8,7 +8,7 @@ define([
 function(/*app, template*/Backbone) {
 
   return Backbone.Collection.extend({
-    url: "http://search.twitter.com/search.json?q=javascript",
+    url: function(){ return "http://search.twitter.com/search.json?q="+this.options.q; },
     sync: function(method, model, options){
       options.timeout = 10000;
       options.dataType = "jsonp";
@@ -17,7 +17,8 @@ function(/*app, template*/Backbone) {
     parse: function(response) {
         return response.results;
     },
-    initialize : function(){
+    initialize : function(data, options){
+      this.options = options;
     }
 
   });

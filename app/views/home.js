@@ -28,10 +28,10 @@ function(app, template, templateTweet) {
         console.log('FINISH 4');
         callback();
       },2000);*/
-      app.someModule.models.tweets.fetch({
+      this.collection.fetch({
         success: function(collection, response, options){
-          console.log(collection);
-          callback();
+          if(typeof callback === "function")
+            callback();
         }
       });
     }
