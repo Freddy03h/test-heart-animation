@@ -5,10 +5,37 @@ require([
   // Main Router.
   "router",
 
+  "models/tweet-collection",
+
   "views/split-view"
 ],
 
-function(app, Router, SplitView) {
+function(app, Router, TweetCollection, SplitView) {
+
+  app.someModule.models.tweets = new TweetCollection();
+  app.someModule.models.keywords = new Backbone.Collection([
+    {
+      title: "javascript"
+    },{
+      title: "html 5"
+    },{
+      title: "require js"
+    },{
+      title: "backbone"
+    },{
+      title: "marionette"
+    },{
+      title: "yeoman"
+    },{
+      title: "grunt"
+    },{
+      title: "bower"
+    },{
+      title: "jam"
+    },{
+      title: "sass"
+    }
+  ]);
 
   app.someModule.views.split = new SplitView();
   app.appRegion.show(app.someModule.views.split);

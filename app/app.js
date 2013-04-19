@@ -11,6 +11,7 @@ define([
   "plugins/backbone.marionette",
   "plugins/backbone.marionette.animationregion",
   "plugins/backbone.marionette.pullableview",
+  "plugins/backbone.marionette.pullablelayout",
   "plugins/modernizr.test"
 
 ],

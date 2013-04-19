@@ -13,18 +13,21 @@ function(app, HomeView, PostView) {
       "": "index",
       "post": "post"
     },
-
     index: function() {
-      app.someModule.views.home = app.someModule.views.home || new HomeView();
-      app.appRegion.currentView.mainRegion.show(app.someModule.views.home);
+
+      app.appRegion.currentView.mainRegion.show(new Backbone.Marionette.PullableLayout({
+        id: "home-pullable",
+        view: new HomeView({
+          collection: app.someModule.models.tweets
+        })
+      }));
+
+      app.someModule.models.tweets.fetch();
+
     },
-
     post: function() {
-      app.someModule.views.post = app.someModule.views.post || new PostView();
-      app.appRegion.currentView.mainRegion.show(app.someModule.views.post);
+      app.appRegion.currentView.mainRegion.show(new PostView());
     }
-
-
   });
 
   return Router;

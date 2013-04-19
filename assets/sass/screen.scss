@@ -31,7 +31,7 @@ html{
 a{text-decoration: none;color:$bleu;}
 p{margin:10px;}
 //#main > div *{-webkit-margin-collapse: separate;}
-#menu-header, #header{
+#menu-header, #header, .sub-header{
 	@include display-flex;
 	@include align-items(center);
 	@include flex-direction(row);
@@ -135,7 +135,19 @@ $largeurMenu :320px - $height-topbar;
 	background-color: $bleuClair;
 	@include single-box-shadow(rgba(0,0,0,0.3), 0, 0, 3px, false, false);
 }
-
+.sub-header{
+	height: 32px;
+	p{
+		color:$bleuClair;
+		margin:0 10px;
+		font-weight: bold;
+		font-size: 22px;
+		text-shadow: 1px 1px 3px #333;
+	}
+	.reload-button .icon {
+		font-size: 26px;
+	}
+}
 
 #menu-main{
 	background-color: white;
@@ -222,7 +234,7 @@ $largeurMenu :320px - $height-topbar;
 	//margin-left:auto;
 }
 
-.menu-button{
+.menu-button, .reload-button{
 	@include display-flex;
 	@include justify-content(center);
 	@include align-items(center);
@@ -230,13 +242,18 @@ $largeurMenu :320px - $height-topbar;
 	height: 100%;
 
 	color: $bleu;
-	background-color:white;
+	//background-color:white;
 	&.selected{
 		background-color: $bleu;
 		color:white;
 	}
 	.icon{
 		font-size: 32px;
+	}
+}
+.appleios.overflowscrolling{
+	.reload-button{
+		display: none;
 	}
 }
 

@@ -25,7 +25,9 @@ function(app, template, MenuView) {
       'click #menu a': 'openMenu'
     },
     initialize : function(e){
-      this.menuView = new MenuView();
+      this.menuView = new MenuView({
+        collection: app.someModule.models.keywords
+      });
       this.has3d = (Modernizr.cssanimations && Modernizr.csstransforms3d && Modernizr.positionfixed);
     },
     onRender: function(){

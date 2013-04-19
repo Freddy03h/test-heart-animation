@@ -147,6 +147,8 @@ Backbone.Marionette.AnimationRegion = Backbone.Marionette.Region.extend({
         // Trigger custom events
         toPage.trigger('pageAnimationEnd', { direction:'in', animation: animation});
         fromPage.trigger('pageAnimationEnd', { direction:'out', animation: animation});
+
+        fromPage.remove();
     }
 
     return true;

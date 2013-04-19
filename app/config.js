@@ -35,6 +35,8 @@ require.config({
 
     "plugins/backbone.marionette.pullableview": ["plugins/backbone.marionette"],
 
+    "plugins/backbone.marionette.pullablelayout": ["plugins/backbone.marionette"],
+
     "plugins/modernizr.test": ["modernizr"]
   }
 
