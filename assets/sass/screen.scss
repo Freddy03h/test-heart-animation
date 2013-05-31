@@ -222,6 +222,12 @@ $largeurMenu :320px - $height-topbar;
 //}
 
 #menu-main li{
+	border:solid $bleuClair 1px;
+	background-color:white;
+	color: $bleu;
+}
+#menu-main a.selected li{
+	//border:solid white 1px;
 	background-color:$bleu;
 	color: white;
 }

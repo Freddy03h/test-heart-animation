@@ -13,6 +13,8 @@ function(app, template) {
     },
     showKeyword: function(e){
       e.preventDefault();
+      this.trigger("remove:class");
+      $(e.currentTarget).addClass('selected');
       app.router.navigate('keyword/'+this.model.get('title'), {trigger: true});
     }
   });
@@ -26,6 +28,9 @@ function(app, template) {
     events: {
     },
     initialize : function(e){
+      this.on("itemview:remove:class", function(childView, msg){
+        this.$el.find('a').removeClass('selected');
+      });
     }
 
   });
