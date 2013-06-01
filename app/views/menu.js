@@ -13,9 +13,12 @@ function(app, template) {
     },
     showKeyword: function(e){
       e.preventDefault();
-      this.trigger("remove:class");
-      $(e.currentTarget).addClass('selected');
+      //this.trigger("remove:class");
+      //$(e.currentTarget).addClass('selected');
       app.router.navigate('keyword/'+this.model.get('title'), {trigger: true});
+    },
+    selecting: function(){
+      this.$el.find('a').addClass('selected');
     }
   });
 
@@ -28,9 +31,13 @@ function(app, template) {
     events: {
     },
     initialize : function(e){
-      this.on("itemview:remove:class", function(childView, msg){
+      /*this.on("itemview:remove:class", function(childView, msg){
         this.$el.find('a').removeClass('selected');
-      });
+      });*/
+    },
+    selectingModel : function(modelSelected){
+      this.$el.find('a').removeClass('selected');
+      this.children.findByModel(modelSelected).selecting();
     }
 
   });

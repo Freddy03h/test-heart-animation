@@ -18,9 +18,9 @@ function(app, Router, SplitView) {
     },{
       title: "require js"
     },{
-      title: "backbone"
+      title: "backbone js"
     },{
-      title: "marionette"
+      title: "marionette js"
     },{
       title: "yeoman"
     },{

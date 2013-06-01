@@ -15,23 +15,24 @@ function(app, TweetCollection, HomeView, PostView) {
       "keyword/:keyword": "index",
       "post": "post"
     },
-    index: function(keyword) {
-      keyword = keyword || 'javascript';
+    index: function(keywordString) {
+      var keywordModel = app.someModule.models.keywords.findWhere({title: keywordString}) || app.someModule.models.keywords.at(0);
 
-      var tweets = new TweetCollection([],{
-        q: keyword
+      var tweetsCollection = new TweetCollection([],{
+        q: keywordModel.get('title')
       });
 
       app.appRegion.currentView.mainRegion.show(new Backbone.Marionette.PullableLayout({
-        id: "home-pullable-"+keyword,
+        id: "home-pullable-" + keywordModel.get('title'),
         view: new HomeView({
-          collection: tweets,
-          model: new Backbone.Model({title: keyword})
+          collection: tweetsCollection,
+          model: keywordModel
         })
       }));
 
-      tweets.fetch();
+      app.appRegion.currentView.menuRegion.currentView.selectingModel(keywordModel);
 
+      tweetsCollection.fetch();
     },
     post: function() {
       app.appRegion.currentView.mainRegion.show(new PostView());
