@@ -30,6 +30,8 @@ function(app, TweetCollection, HomeView, PostView) {
         })
       }));
 
+      app.appRegion.currentView.setTitle(keywordModel.get('title'));
+
       app.appRegion.currentView.menuRegion.currentView.selectingModel(keywordModel);
 
       tweetsCollection.fetch();

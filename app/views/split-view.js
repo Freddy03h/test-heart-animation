@@ -100,6 +100,10 @@ function(app, template, MenuView) {
         setTimeout(function(){
             self.contentEl.addClass('open-submenu');
         },10);
+    },
+
+    setTitle: function(titleText){
+      this.$el.find("#header .title").text(titleText);
     }
 
   });
