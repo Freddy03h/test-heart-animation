@@ -56,11 +56,14 @@ p{margin:10px;}
 	//visibility: hidden;
 	ul{
 		background-color: $bleu;
-		color:black;
+		color:$bleu;
 		@include transition(transform 300ms ease-in-out);
 		@include transform(translateY(-100%));
 	}
 	li{
+		background-color: $bleuClair;
+	}
+	a.selected li{
 		background-color: $orangeClair;
 	}
 
@@ -225,6 +228,9 @@ $largeurMenu :320px - $height-topbar;
 	border:solid $bleuClair 1px;
 	background-color:white;
 	color: $bleu;
+	.lang{
+		float:right;
+	}
 }
 #menu-main a.selected li{
 	//border:solid white 1px;

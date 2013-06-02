@@ -628,7 +628,7 @@ p {
 /* line 57, ../sass/screen.scss */
 #sub-menu ul {
   background-color: #2b2b67;
-  color: black;
+  color: #2b2b67;
   -webkit-transition: -webkit-transform 300ms ease-in-out;
   -moz-transition: -moz-transform 300ms ease-in-out;
   -o-transition: -o-transform 300ms ease-in-out;
@@ -641,9 +641,13 @@ p {
 }
 /* line 63, ../sass/screen.scss */
 #sub-menu li {
+  background-color: lavender;
+}
+/* line 66, ../sass/screen.scss */
+#sub-menu a.selected li {
   background-color: #ffbf00;
 }
-/* line 67, ../sass/screen.scss */
+/* line 70, ../sass/screen.scss */
 .open-submenu #sub-menu {
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-transition-delay: 0ms;
@@ -651,7 +655,7 @@ p {
   -o-transition-delay: 0ms;
   transition-delay: 0ms;
 }
-/* line 70, ../sass/screen.scss */
+/* line 73, ../sass/screen.scss */
 .open-submenu #sub-menu ul {
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);
@@ -659,12 +663,12 @@ p {
   -o-transform: translateY(0);
   transform: translateY(0);
 }
-/* line 74, ../sass/screen.scss */
+/* line 77, ../sass/screen.scss */
 #sub-menu.displayed {
   display: block;
 }
 
-/* line 79, ../sass/screen.scss */
+/* line 82, ../sass/screen.scss */
 .no-cssanimations #sub-menu, .no-csstransforms3d #sub-menu, .no-positionfixed #sub-menu {
   -webkit-transition: none;
   -moz-transition: none;
@@ -672,7 +676,7 @@ p {
   transition: none;
   display: none;
 }
-/* line 81, ../sass/screen.scss */
+/* line 84, ../sass/screen.scss */
 .no-cssanimations #sub-menu ul, .no-csstransforms3d #sub-menu ul, .no-positionfixed #sub-menu ul {
   -webkit-transition: none;
   -moz-transition: none;
@@ -684,49 +688,49 @@ p {
   -o-transform: none;
   transform: none;
 }
-/* line 87, ../sass/screen.scss */
+/* line 90, ../sass/screen.scss */
 .no-cssanimations .open-submenu #sub-menu, .no-csstransforms3d .open-submenu #sub-menu, .no-positionfixed .open-submenu #sub-menu {
   display: block;
 }
 
-/* line 93, ../sass/screen.scss */
+/* line 96, ../sass/screen.scss */
 .overflowscrolling.appleios.safari body {
   bottom: -60px;
 }
 
-/* line 96, ../sass/screen.scss */
+/* line 99, ../sass/screen.scss */
 .pull-to-refresh {
   color: white;
   background-color: grey;
 }
 
-/* line 103, ../sass/screen.scss */
+/* line 106, ../sass/screen.scss */
 .split-view > .aside-view {
   width: 276px;
   z-index: 1;
 }
-/* line 107, ../sass/screen.scss */
+/* line 110, ../sass/screen.scss */
 .split-view > .content-view {
   left: 276px;
   z-index: 2;
 }
 
-/* line 115, ../sass/screen.scss */
+/* line 118, ../sass/screen.scss */
 #content .top-bar {
   z-index: 3;
 }
 
-/* line 119, ../sass/screen.scss */
+/* line 122, ../sass/screen.scss */
 #sub-menu {
   z-index: 2;
 }
 
-/* line 123, ../sass/screen.scss */
+/* line 126, ../sass/screen.scss */
 #main {
   z-index: 1;
 }
 
-/* line 127, ../sass/screen.scss */
+/* line 130, ../sass/screen.scss */
 #header {
   background-color: #FFF;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -734,7 +738,7 @@ p {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-/* line 133, ../sass/screen.scss */
+/* line 136, ../sass/screen.scss */
 #menu-header {
   z-index: 2;
   background-color: lavender;
@@ -743,11 +747,11 @@ p {
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
 }
 
-/* line 138, ../sass/screen.scss */
+/* line 141, ../sass/screen.scss */
 .sub-header {
   height: 32px;
 }
-/* line 140, ../sass/screen.scss */
+/* line 143, ../sass/screen.scss */
 .sub-header p {
   color: lavender;
   margin: 0 10px;
@@ -755,17 +759,17 @@ p {
   font-size: 22px;
   text-shadow: 1px 1px 3px #333;
 }
-/* line 147, ../sass/screen.scss */
+/* line 150, ../sass/screen.scss */
 .sub-header .reload-button .icon {
   font-size: 26px;
 }
 
-/* line 152, ../sass/screen.scss */
+/* line 155, ../sass/screen.scss */
 #menu-main {
   background-color: white;
 }
 
-/* line 156, ../sass/screen.scss */
+/* line 159, ../sass/screen.scss */
 #content {
   background-color: #F4F4F4;
   -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -773,7 +777,7 @@ p {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* line 161, ../sass/screen.scss */
+/* line 164, ../sass/screen.scss */
 #tab-bar {
   background-color: #FFF;
   -webkit-box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
@@ -804,7 +808,7 @@ p {
   -ms-justify-content: center;
   justify-content: center;
 }
-/* line 168, ../sass/screen.scss */
+/* line 171, ../sass/screen.scss */
 #tab-bar > * {
   -webkit-box-flex: 1;
   -moz-box-flex: 1;
@@ -847,23 +851,23 @@ p {
   -ms-align-items: center;
   align-items: center;
 }
-/* line 174, ../sass/screen.scss */
+/* line 177, ../sass/screen.scss */
 #tab-bar > *.selected {
   background-color: #2b2b67;
   color: white;
 }
-/* line 178, ../sass/screen.scss */
+/* line 181, ../sass/screen.scss */
 #tab-bar > * > * {
   display: block;
 }
-/* line 181, ../sass/screen.scss */
+/* line 184, ../sass/screen.scss */
 #tab-bar > * > *.icon {
   font-size: 32px;
   padding: 2px 0;
   height: 32px;
   box-sizing: border-box;
 }
-/* line 187, ../sass/screen.scss */
+/* line 190, ../sass/screen.scss */
 #tab-bar > * > *.title {
   font-size: 14px;
   padding: 2px 0;
@@ -871,7 +875,7 @@ p {
   box-sizing: border-box;
 }
 
-/* line 197, ../sass/screen.scss */
+/* line 200, ../sass/screen.scss */
 .curtain:before {
   opacity: 1;
   background-color: rgba(0, 0, 0, 0.5);
@@ -884,12 +888,12 @@ p {
   z-index: 10;
 }
 
-/* line 212, ../sass/screen.scss */
+/* line 215, ../sass/screen.scss */
 ul {
   overflow: auto;
 }
 
-/* line 215, ../sass/screen.scss */
+/* line 218, ../sass/screen.scss */
 li {
   margin: 10px;
   padding: 10px;
@@ -902,25 +906,29 @@ li {
   background-color: lavender;
 }
 
-/* line 224, ../sass/screen.scss */
+/* line 227, ../sass/screen.scss */
 #menu-main li {
   border: solid lavender 1px;
   background-color: white;
   color: #2b2b67;
 }
+/* line 231, ../sass/screen.scss */
+#menu-main li .lang {
+  float: right;
+}
 
-/* line 229, ../sass/screen.scss */
+/* line 235, ../sass/screen.scss */
 #menu-main a.selected li {
   background-color: #2b2b67;
   color: white;
 }
 
-/* line 235, ../sass/screen.scss */
+/* line 241, ../sass/screen.scss */
 #menu-one {
   display: none;
 }
 
-/* line 243, ../sass/screen.scss */
+/* line 249, ../sass/screen.scss */
 .menu-button, .reload-button {
   display: -webkit-box;
   display: -moz-box;
@@ -962,23 +970,23 @@ li {
   height: 100%;
   color: #2b2b67;
 }
-/* line 252, ../sass/screen.scss */
+/* line 258, ../sass/screen.scss */
 .menu-button.selected, .reload-button.selected {
   background-color: #2b2b67;
   color: white;
 }
-/* line 256, ../sass/screen.scss */
+/* line 262, ../sass/screen.scss */
 .menu-button .icon, .reload-button .icon {
   font-size: 32px;
 }
 
-/* line 261, ../sass/screen.scss */
+/* line 267, ../sass/screen.scss */
 .appleios.overflowscrolling .reload-button {
   display: none;
 }
 
 @media screen and (max-width: 570px) {
-  /* line 268, ../sass/screen.scss */
+  /* line 274, ../sass/screen.scss */
   .split-view > .page-layout, .cssanimations.csstransforms3d.positionfixed .split-view > .scrollable {
     -webkit-transition-property: -webkit-transform;
     transition-property: transform;
@@ -987,27 +995,27 @@ li {
     -webkit-transition-timing-function: ease-in-out;
     transition-timing-function: ease-in-out;
   }
-  /* line 276, ../sass/screen.scss */
+  /* line 282, ../sass/screen.scss */
   .split-view > .aside-view {
     width: 276px;
   }
-  /* line 280, ../sass/screen.scss */
+  /* line 286, ../sass/screen.scss */
   .split-view > .content-view {
     left: 0;
     width: 100%;
   }
-  /* line 288, ../sass/screen.scss */
+  /* line 294, ../sass/screen.scss */
   .split-view.open-menu > .content-view {
     -webkit-transform: translateX(276px);
     transform: translateX(276px);
   }
-  /* line 292, ../sass/screen.scss */
+  /* line 298, ../sass/screen.scss */
   .split-view.open-menu #menu-one {
     background-color: #2b2b67;
     color: white;
   }
 
-  /* line 299, ../sass/screen.scss */
+  /* line 305, ../sass/screen.scss */
   #menu-one {
     display: -webkit-box;
     display: -moz-box;
@@ -1023,21 +1031,21 @@ li {
     display: flex;
   }
 
-  /* line 306, ../sass/screen.scss */
+  /* line 312, ../sass/screen.scss */
   .no-cssanimations .split-view > .aside-view, .no-csstransforms3d .split-view > .aside-view, .no-positionfixed .split-view > .aside-view {
     position: absolute;
     display: none;
   }
-  /* line 315, ../sass/screen.scss */
+  /* line 321, ../sass/screen.scss */
   .no-cssanimations .split-view.open-menu, .no-csstransforms3d .split-view.open-menu, .no-positionfixed .split-view.open-menu {
     display: block;
   }
-  /* line 317, ../sass/screen.scss */
+  /* line 323, ../sass/screen.scss */
   .no-cssanimations .split-view.open-menu > .aside-view, .no-csstransforms3d .split-view.open-menu > .aside-view, .no-positionfixed .split-view.open-menu > .aside-view {
     position: static;
     display: block;
   }
-  /* line 321, ../sass/screen.scss */
+  /* line 327, ../sass/screen.scss */
   .no-cssanimations .split-view.open-menu > .content-view, .no-csstransforms3d .split-view.open-menu > .content-view, .no-positionfixed .split-view.open-menu > .content-view {
     position: absolute;
     left: 276px;
@@ -1047,17 +1055,17 @@ li {
     overflow-y: hidden;
   }
 }
-/* line 340, ../sass/screen.scss */
+/* line 346, ../sass/screen.scss */
 #overlay.closing {
   opacity: 0;
 }
 
-/* line 343, ../sass/screen.scss */
+/* line 349, ../sass/screen.scss */
 #overlay.closed {
   display: none;
 }
 
-/* line 346, ../sass/screen.scss */
+/* line 352, ../sass/screen.scss */
 #overlay {
   -webkit-transition: opacity 0.2s ease-in-out;
   -moz-transition: opacity 0.2s ease-in-out;

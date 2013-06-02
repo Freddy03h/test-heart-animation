@@ -5,32 +5,33 @@ require([
   // Main Router.
   "router",
 
-  "views/split-view"
+  "models/keyword-collection",
+  "views/split-view",
 ],
 
-function(app, Router, SplitView) {
+function(app, Router, KeywordCollection, SplitView) {
 
-  app.someModule.models.keywords = new Backbone.Collection([
+  app.someModule.models.keywords = new KeywordCollection([
     {
-      title: "javascript"
+      title: "javascript", lang:""
     },{
-      title: "html 5"
+      title: "html 5", lang:""
     },{
-      title: "require js"
+      title: "require js", lang:""
     },{
-      title: "backbone js"
+      title: "backbone js", lang:""
     },{
-      title: "marionette js"
+      title: "marionette js", lang:""
     },{
-      title: "yeoman"
+      title: "yeoman", lang:""
     },{
-      title: "grunt"
+      title: "grunt", lang:""
     },{
-      title: "bower"
+      title: "bower", lang:""
     },{
-      title: "jam"
+      title: "jam", lang:""
     },{
-      title: "sass"
+      title: "sass", lang:""
     }
   ]);
 

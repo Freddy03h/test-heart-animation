@@ -2,10 +2,11 @@ define([
   // Application.
   "app",
   "text!templates/split-view.html",
-  "views/menu"
+  "views/menu",
+  "views/submenu"
 ],
 
-function(app, template, MenuView) {
+function(app, template, MenuView, SubmenuView) {
 
   return Backbone.Marionette.Layout.extend({
     tagName: "div",
@@ -17,7 +18,8 @@ function(app, template, MenuView) {
         regionType : Backbone.Marionette.AnimationRegion
       },
       headerRegion: '#header',
-      menuRegion: '#menu-main'
+      menuRegion: '#menu-main',
+      submenuRegion: "#sub-menu"
     },
     events: {
       'click #menu-one': 'openMenu',
@@ -28,12 +30,17 @@ function(app, template, MenuView) {
       this.menuView = new MenuView({
         collection: app.someModule.models.keywords
       });
+      this.submenuView = new SubmenuView({
+        collection: new Backbone.Collection([{title:"fr"},{title:"en"},{title:"es"},{title:"de"},{title:"it"}])
+      });
       this.has3d = (Modernizr.cssanimations && Modernizr.csstransforms3d && Modernizr.positionfixed);
     },
     onRender: function(){
       this.menuRegion.show(this.menuView);
+      this.submenuRegion.show(this.submenuView);
 
       this.submenuEl = this.$el.find('#sub-menu');
+      this.buttonSubmenuEl = this.$el.find('#menu-two');
       this.contentEl = this.$el.find('#content');
     },
     openMenu: function(e){
@@ -64,7 +71,7 @@ function(app, template, MenuView) {
       var self = this;
       var submenu = this.submenuEl;
 
-      $(e.currentTarget).toggleClass('selected');
+      //$(e.currentTarget).toggleClass('selected');
 
       if(submenu.hasClass('displayed')){
         self.closeSubMenu(e);
@@ -78,28 +85,32 @@ function(app, template, MenuView) {
 
     closeSubMenu: function(e){
       var self = this;
-        var submenu = this.submenuEl;
+      var submenu = this.submenuEl;
 
-        if(this.has3d){
-          submenu.on('webkitTransitionEnd transitionEnd', function(e){
-            submenu.off('webkitTransitionEnd transitionEnd');
-            submenu.removeClass('displayed');
-          });
-        }else{
+      this.buttonSubmenuEl.removeClass('selected');
+
+      if(this.has3d){
+        submenu.on('webkitTransitionEnd transitionEnd', function(e){
+          submenu.off('webkitTransitionEnd transitionEnd');
           submenu.removeClass('displayed');
-        }
-        setTimeout(function(){
-            self.contentEl.removeClass('open-submenu');
-        },10);
+        });
+      }else{
+        submenu.removeClass('displayed');
+      }
+      setTimeout(function(){
+          self.contentEl.removeClass('open-submenu');
+      },10);
     },
     openSubMenu: function(e){
       var self = this;
-        var submenu = this.submenuEl;
+      var submenu = this.submenuEl;
 
-        submenu.addClass('displayed');
-        setTimeout(function(){
-            self.contentEl.addClass('open-submenu');
-        },10);
+      this.buttonSubmenuEl.addClass('selected');
+
+      submenu.addClass('displayed');
+      setTimeout(function(){
+          self.contentEl.addClass('open-submenu');
+      },10);
     },
 
     setTitle: function(titleText){

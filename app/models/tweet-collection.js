@@ -8,7 +8,10 @@ define([
 function(/*app, template*/Backbone) {
 
   return Backbone.Collection.extend({
-    url: function(){ return "http://search.twitter.com/search.json?q="+this.options.q; },
+    url: function(){
+      console.log(this.options);
+      return "http://search.twitter.com/search.json?"+ $.param(this.options);
+    },
     sync: function(method, model, options){
       options.timeout = 10000;
       options.dataType = "jsonp";

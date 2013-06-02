@@ -18,14 +18,10 @@ function(app, TweetCollection, HomeView, PostView) {
     index: function(keywordString) {
       var keywordModel = app.someModule.models.keywords.findWhere({title: keywordString}) || app.someModule.models.keywords.at(0);
 
-      var tweetsCollection = new TweetCollection([],{
-        q: keywordModel.get('title')
-      });
-
       app.appRegion.currentView.mainRegion.show(new Backbone.Marionette.PullableLayout({
         id: "home-pullable-" + keywordModel.get('title'),
         view: new HomeView({
-          collection: tweetsCollection,
+          collection: keywordModel.tweets,
           model: keywordModel
         })
       }));
@@ -33,8 +29,9 @@ function(app, TweetCollection, HomeView, PostView) {
       app.appRegion.currentView.setTitle(keywordModel.get('title'));
 
       app.appRegion.currentView.menuRegion.currentView.selectingModel(keywordModel);
+      app.appRegion.currentView.submenuRegion.currentView.selecting(keywordModel.get('lang'));
 
-      tweetsCollection.fetch();
+      keywordModel.tweets.fetch();
     },
     post: function() {
       app.appRegion.currentView.mainRegion.show(new PostView());

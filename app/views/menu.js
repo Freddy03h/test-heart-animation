@@ -7,9 +7,17 @@ define([
 function(app, template) {
 
   var ItemLine = Backbone.Marionette.ItemView.extend({
-    template: '<a href="javascript://" data-animation="slideleft"><li><span class="title"><%= title %></span></li></a>',
+    template: '<a href="javascript://" data-animation="slideleft"><li><span class="title"><%= title %></span><span class="lang"><%= lang %></span></li></a>',
     events: {
       "click a" : "showKeyword"
+    },
+    initialize : function(e){
+      this.listenTo(this.model, 'change', this.render);
+      this.selectState = false;
+    },
+    onRender: function(){
+      if(this.selectState)
+        this.selecting();
     },
     showKeyword: function(e){
       e.preventDefault();
@@ -19,6 +27,7 @@ function(app, template) {
     },
     selecting: function(){
       this.$el.find('a').addClass('selected');
+      this.selectState = true;
     }
   });
 
