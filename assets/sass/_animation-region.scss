@@ -5,8 +5,11 @@
 .cssanimations.csstransforms3d.positionfixed  {
 
 	.animation-region{
+        -webkit-perspective: 1000;
 	    perspective: 1000;
+        -webkit-transform-style: preserve-3d;
 	    transform-style: preserve-3d;
+        
 	    overflow: hidden;
 	}
 	.animation-region > * {
@@ -14,7 +17,7 @@
 		position: absolute;
 		display: block;
 
-		-webkit-perspective: 1000;
+		//-webkit-perspective: 1000;
 		-webkit-backface-visibility: hidden;
 	}
 	.animation-region > :not(.current) {

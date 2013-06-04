@@ -7,9 +7,13 @@ define([
 function(app, template) {
 
   var ItemLine = Backbone.Marionette.ItemView.extend({
-    template: '<a href="javascript://" data-animation="slideleft"><li><span class="title"><%= title %></span><span class="lang"><%= lang %></span></li></a>',
+    template: '<li><span class="title"><%= title %></span><span class="lang"><%= lang %></span></li>',
+    tagName: "a",
+    attributes:{
+      "href": "javascript://"
+    },
     events: {
-      "click a" : "showKeyword"
+      "click" : "showKeyword"
     },
     initialize : function(e){
       this.listenTo(this.model, 'change', this.render);
@@ -26,15 +30,19 @@ function(app, template) {
       app.router.navigate('keyword/'+this.model.get('title'), {trigger: true});
     },
     selecting: function(){
-      this.$el.find('a').addClass('selected');
+      this.$el.addClass('selected');
       this.selectState = true;
+    },
+    unSelecting: function(){
+      this.$el.removeClass('selected');
+      this.selectState = false;
     }
   });
 
   return Backbone.Marionette.CollectionView.extend({
     tagName: "ul",
     id:"menu",
-    //className: "scrollable",
+    className: "wrap",
     //template: template,
     itemView: ItemLine,
     events: {
@@ -45,7 +53,8 @@ function(app, template) {
       });*/
     },
     selectingModel : function(modelSelected){
-      this.$el.find('a').removeClass('selected');
+      this.children.call('unSelecting');
+      //this.$el.find('a').removeClass('selected');
       this.children.findByModel(modelSelected).selecting();
     }
 

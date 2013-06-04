@@ -31,7 +31,14 @@ function(app, template, MenuView, SubmenuView) {
         collection: app.someModule.models.keywords
       });
       this.submenuView = new SubmenuView({
-        collection: new Backbone.Collection([{title:"fr"},{title:"en"},{title:"es"},{title:"de"},{title:"it"}])
+        collection: new Backbone.Collection([
+          {title:"All", code:""},
+          {title:"English", code:"en"},
+          {title:"French", code:"fr"},
+          {title:"Spanish", code:"es"},
+          {title:"German", code:"de"},
+          {title:"Italian", code:"it"}
+        ])
       });
       this.has3d = (Modernizr.cssanimations && Modernizr.csstransforms3d && Modernizr.positionfixed);
     },
@@ -113,8 +120,9 @@ function(app, template, MenuView, SubmenuView) {
       },10);
     },
 
-    setTitle: function(titleText){
-      this.$el.find("#header .title").text(titleText);
+    setModelToHeader: function(model){
+      this.$el.find("#header .title").text(model.get('title'));
+      this.$el.find("#menu-two .icon").text(model.get('lang') || '❃');
     }
 
   });

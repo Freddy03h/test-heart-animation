@@ -26,7 +26,7 @@ function(app, TweetCollection, HomeView, PostView) {
         })
       }));
 
-      app.appRegion.currentView.setTitle(keywordModel.get('title'));
+      app.appRegion.currentView.setModelToHeader(keywordModel);
 
       app.appRegion.currentView.menuRegion.currentView.selectingModel(keywordModel);
       app.appRegion.currentView.submenuRegion.currentView.selecting(keywordModel.get('lang'));

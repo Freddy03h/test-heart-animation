@@ -138,6 +138,9 @@ $largeurMenu :320px - $height-topbar;
 	background-color: $bleuClair;
 	@include single-box-shadow(rgba(0,0,0,0.3), 0, 0, 3px, false, false);
 }
+.appleios .sub-header{
+	display: none;
+}
 .sub-header{
 	height: 32px;
 	p{
@@ -231,6 +234,7 @@ $largeurMenu :320px - $height-topbar;
 	.lang{
 		float:right;
 	}
+	@include transition(background-color 0.2s ease-in-out, color 0.2s ease-in-out);
 }
 #menu-main a.selected li{
 	//border:solid white 1px;
@@ -255,6 +259,7 @@ $largeurMenu :320px - $height-topbar;
 
 	color: $bleu;
 	//background-color:white;
+	@include transition(background-color 0.2s ease-in-out, color 0.2s ease-in-out);
 	&.selected{
 		background-color: $bleu;
 		color:white;
