@@ -27,9 +27,7 @@ function(app, template, MenuView, SubmenuView) {
       'click #menu a': 'openMenu'
     },
     initialize : function(e){
-      this.menuView = new MenuView({
-        collection: app.someModule.models.keywords
-      });
+      this.menuView = new MenuView();
       this.submenuView = new SubmenuView({
         collection: new Backbone.Collection([
           {title:"All", code:""},
@@ -120,9 +118,8 @@ function(app, template, MenuView, SubmenuView) {
       },10);
     },
 
-    setModelToHeader: function(model){
-      this.$el.find("#header .title").text(model.get('title'));
-      this.$el.find("#menu-two .icon").text(model.get('lang') || '❃');
+    setTitleToHeader: function(title){
+      this.$el.find("#header .title").text(title);
     }
 
   });

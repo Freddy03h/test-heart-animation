@@ -694,11 +694,9 @@ p {
   display: block;
 }
 
-/* line 96, ../sass/screen.scss */
-.overflowscrolling.appleios.safari body {
-  bottom: -60px;
-}
-
+/*.overflowscrolling.appleios.safari body{
+	bottom: -60px;
+}*/
 /* line 99, ../sass/screen.scss */
 .pull-to-refresh {
   color: white;

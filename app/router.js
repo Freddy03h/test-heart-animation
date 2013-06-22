@@ -1,20 +1,90 @@
 define([
   // Application.
   "app",
-  "models/tweet-collection",
-  "views/home",
-  "views/post"
+  "models/people-collection",
+  "models/person-model",
+  "views/login",
+  "views/people",
+  "views/person"
 ],
 
-function(app, TweetCollection, HomeView, PostView) {
+function(app, PeopleCollection, PersonModel, LoginView, PeopleView, PersonView) {
 
   // Defining the application router, you can attach sub routers here.
   var Router = Backbone.Router.extend({
     routes: {
-      "": "index",
-      "keyword/:keyword": "index",
-      "post": "post"
+      "": "people",
+      "people": "people",
+
+      "me": "me",
+      "person-:id": "person",
+      "login": "login",
+      "oauthcallback": "oauthcallback"
+      //"": "index",
+      //"keyword/:keyword": "index",
+      //"post": "post"
     },
+    login: function(){
+      console.log('OH!!');
+      app.appRegion.currentView.mainRegion.show(new LoginView());
+    },
+    oauthcallback: function(){
+      if(location.hash){
+        var params = {},
+            queryString = location.hash.substring(1),
+            regex = /([^&=]+)=([^&]*)/g,
+            m;
+        while (m = regex.exec(queryString)) {
+          params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
+        }
+
+        console.log(params);
+
+        localStorage.setItem('google-auth', JSON.stringify(params));
+        app.router.navigate("/", {trigger: true});
+      }
+    },
+    people: function(){
+      app.someModule.models.peopleCollection = app.someModule.models.peopleCollection || new PeopleCollection();
+
+      app.appRegion.currentView.menuRegion.currentView.changeSelect('people');
+      app.appRegion.currentView.setTitleToHeader('people');
+
+      app.appRegion.currentView.mainRegion.show(
+        new PeopleView({
+          collection: app.someModule.models.peopleCollection
+        })
+      );
+
+      app.someModule.models.peopleCollection.fetch();
+    },
+    person: function(id){
+      var personModel = app.someModule.models.peopleCollection.get(id);
+
+      app.appRegion.currentView.setTitleToHeader('person');
+
+      app.appRegion.currentView.mainRegion.show(
+        new PersonView({
+          model: personModel
+        })
+      );
+
+      personModel.fetch();
+    },
+    me: function(){
+      app.someModule.models.meModel = app.someModule.models.meModel || new PersonModel({id: 'me'});
+
+      app.appRegion.currentView.menuRegion.currentView.changeSelect('me');
+      app.appRegion.currentView.setTitleToHeader('me');
+
+      app.appRegion.currentView.mainRegion.show(
+        new PersonView({
+          model: app.someModule.models.meModel
+        })
+      );
+
+      app.someModule.models.meModel.fetch();
+    }/*,
     index: function(keywordString) {
       var keywordModel = app.someModule.models.keywords.findWhere({title: keywordString}) || app.someModule.models.keywords.at(0);
 
@@ -35,7 +105,7 @@ function(app, TweetCollection, HomeView, PostView) {
     },
     post: function() {
       app.appRegion.currentView.mainRegion.show(new PostView());
-    }
+    }*/
   });
 
   return Router;

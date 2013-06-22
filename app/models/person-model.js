@@ -8,22 +8,29 @@ define([
 
 function(app,/* template*/Backbone) {
 
-  return Backbone.Collection.extend({
+  return Backbone.Model.extend({
+    defaults: {
+      "displayName": "",
+      "image": {"url": ""},
+      "gender":"",
+      "aboutMe":"",
+      "birthday": ""
+    },
     url: function(){
-      console.log(this.options);
-      return "https://api.twitter.com/1.1/search/tweets.json?"+ $.param(this.options);
+      return "https://www.googleapis.com/plus/v1/people/" + this.get('id');
     },
     sync: function(method, model, options){
       options.timeout = 10000;
       //options.dataType = "jsonp";
       options.headers = {
-        'Authorization': 'Bearer ' + app.bearer_token
+        'Authorization': 'Bearer ' + app.google_auth.access_token
       };
       return Backbone.sync(method, model, options);
     },
-    parse: function(response) {
-        return response.results;
-    },
+    /*parse: function(response) {
+      console.log(response);
+      return response;
+    },*/
     initialize : function(data, options){
       this.options = options;
     }

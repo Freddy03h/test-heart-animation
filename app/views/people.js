@@ -2,39 +2,44 @@ define([
   // Application.
   "app",
   "text!templates/home.html",
-  "text!templates/tweet-line.html"
+  "text!templates/person-line.html"
 ],
 
-function(app, template, templateTweet) {
+function(app, template, templatePerson) {
 
-  var TweetLine = Backbone.Marionette.ItemView.extend({
-    template: templateTweet
+  var PersonLine = Backbone.Marionette.ItemView.extend({
+    template: templatePerson,
+    tagName: "li",
+    events:{
+      'click': 'showPerson'
+    },
+    showPerson: function(e){
+      app.appRegion.currentView.mainRegion.animation = "slideleft";
+      app.router.navigate("/person-"+this.model.id, {trigger: true});
+    }
   });
 
   return Backbone.Marionette.CompositeView.extend({
     tagName: "div",
     id:"home",
+    className:"scrollable",
     template: template,
-    itemView: TweetLine,
-    itemViewContainer: "ul",
-    events: {
+    itemView: PersonLine,
+    itemViewContainer: "ul"
+    /*events: {
       "click .reload-button": "reloadData"
     },
     initialize : function(e){
     },
     reloadData: function(callback){
       //var self = this;
-      /*setTimeout(function(){
-        console.log('FINISH 4');
-        callback();
-      },2000);*/
       this.collection.fetch({
         success: function(collection, response, options){
           if(typeof callback === "function")
             callback();
         }
       });
-    }
+    }*/
 
   });
 

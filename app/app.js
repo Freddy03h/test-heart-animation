@@ -38,7 +38,7 @@ function($, _, Backbone) {
   // creation.
   var app = new Backbone.Marionette.Application({
     // The root path to run the application through.
-    root: "/",
+    root: "/heart/",
     someModule: {
       views: {},
       models: {}
@@ -48,6 +48,10 @@ function($, _, Backbone) {
   app.addRegions({
     appRegion: '#app'
   });
+
+  var authGoogle = localStorage.getItem('google-auth');
+  if (authGoogle)
+    app.google_auth = JSON.parse(authGoogle);
 
   app.overlay = $("#overlay");
   app.setOverlay = function (bool) {
