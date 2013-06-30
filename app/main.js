@@ -5,7 +5,7 @@ require([
   // Main Router.
   "router",
 
-  "views/split-view",
+  "views/split-view"
 ],
 
 function(app, Router, SplitView) {
@@ -24,7 +24,7 @@ function(app, Router, SplitView) {
   // navigation from this instance.
   app.router = new Router();
 
-  if(!app.google_auth){
+  if(!app.google_auth && location.hash === ""){
     //window.location.pathname = '/heart/login';
     window.history.pushState(null, "", "/heart/login");
   }

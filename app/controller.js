@@ -30,6 +30,7 @@ function(app, PeopleCollection, PersonModel, LoginView, PeopleView, PersonView) 
         console.log(params);
 
         localStorage.setItem('google-auth', JSON.stringify(params));
+        app.google_auth = params;
         app.router.navigate("/", {trigger: true});
       }
     },
