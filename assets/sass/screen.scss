@@ -55,8 +55,8 @@ p{margin:10px;}
 	//opacity:0;
 	//visibility: hidden;
 	.wrap{
-		-webkit-perspective: 1000;
-	    perspective: 1000;
+		-webkit-perspective: 1000px;
+	    perspective: 1000px;
 	    -webkit-transform-style: preserve-3d;
 	    transform-style: preserve-3d;
 	}
@@ -284,8 +284,8 @@ $largeurMenu :320px - $height-topbar;
 
 @media screen and (max-width: 570px) {
 	.split-view{
-		-webkit-perspective: 1000;
-	    perspective: 1000;
+		-webkit-perspective: 1000px;
+	    perspective: 1000px;
         -webkit-transform-style: preserve-3d;
 	    transform-style: preserve-3d;
 
