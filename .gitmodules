@@ -1,3 +1,6 @@
 [submodule "assets/js/plugins/backbone.marionette.animationregion"]
 	path = assets/js/plugins/backbone.marionette.animationregion
 	url = https://github.com/Freddy03h/backbone.marionette.animationregion.git
+[submodule "assets/sass/compass-flex"]
+	path = assets/sass/compass-flex
+	url = https://github.com/Freddy03h/compass-flex.git
