@@ -26,7 +26,7 @@ function(app, Router, SplitView) {
 
   if(!app.google_auth && location.hash === ""){
     //window.location.pathname = '/heart/login';
-    window.history.pushState(null, "", "/heart/login");
+    window.history.pushState(null, "", "/test-heart-animation/login");
   }
 
   // Trigger the initial route and enable HTML5 History API support, set the

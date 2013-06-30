@@ -39,7 +39,7 @@ function($, _, Backbone) {
   // creation.
   var app = new Backbone.Marionette.Application({
     // The root path to run the application through.
-    root: "/heart/",
+    root: "/test-heart-animation/",
     someModule: {
       views: {},
       models: {}
