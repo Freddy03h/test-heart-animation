@@ -10,7 +10,7 @@ define([
   "plugins/jquery.toObject",
   "plugins/backbone.routefilter",
   "plugins/backbone.marionette",
-  "plugins/backbone.marionette.animationregion",
+  "plugins/backbone.marionette.animationregion/backbone.marionette.animationregion",
   "plugins/backbone.marionette.pullableview",
   "plugins/backbone.marionette.pullablelayout",
   "plugins/modernizr.test"
