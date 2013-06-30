@@ -13,8 +13,8 @@ $default-border-radius: 6px;
 $height-bottombar: 50px;
 $height-topbar: 44px;
 
-@import "heart";
-@import "animation-region";
+@import "heart/heart";
+@import "heart/animation-region";
 
 $bleu:#2B2B67;
 $bleuClair:lavender;

@@ -4,3 +4,6 @@
 [submodule "assets/sass/compass-flex"]
 	path = assets/sass/compass-flex
 	url = https://github.com/Freddy03h/compass-flex.git
+[submodule "assets/sass/heart"]
+	path = assets/sass/heart
+	url = https://github.com/Freddy03h/heart.git
