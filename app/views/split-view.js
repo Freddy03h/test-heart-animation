@@ -118,8 +118,9 @@ function(app, template, MenuView, SubmenuView) {
       },10);
     },
 
-    setTitleToHeader: function(title){
+    setTitleToHeader: function(title, back){
       this.$el.find("#header .title").text(title);
+      this.$el.find("#header").toggleClass( 'back', back );
     }
 
   });

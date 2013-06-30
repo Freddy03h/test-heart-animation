@@ -8,6 +8,7 @@ define([
   // Plugins.
   //"plugins/backbone.layoutmanager"
   "plugins/jquery.toObject",
+  "plugins/backbone.routefilter",
   "plugins/backbone.marionette",
   "plugins/backbone.marionette.animationregion",
   "plugins/backbone.marionette.pullableview",

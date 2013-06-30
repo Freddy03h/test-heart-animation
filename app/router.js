@@ -1,18 +1,16 @@
 define([
   // Application.
   "app",
-  "models/people-collection",
-  "models/person-model",
-  "views/login",
-  "views/people",
-  "views/person"
+  "controller",
+  "views/split-view",
 ],
 
-function(app, PeopleCollection, PersonModel, LoginView, PeopleView, PersonView) {
+function(app, Controller, SplitView) {
 
   // Defining the application router, you can attach sub routers here.
-  var Router = Backbone.Router.extend({
-    routes: {
+  var Router = Backbone.Marionette.AppRouter.extend({
+    controller: new Controller(),
+    appRoutes: {
       "": "people",
       "people": "people",
 
@@ -24,88 +22,17 @@ function(app, PeopleCollection, PersonModel, LoginView, PeopleView, PersonView) 
       //"keyword/:keyword": "index",
       //"post": "post"
     },
-    login: function(){
-      console.log('OH!!');
-      app.appRegion.currentView.mainRegion.show(new LoginView());
-    },
-    oauthcallback: function(){
-      if(location.hash){
-        var params = {},
-            queryString = location.hash.substring(1),
-            regex = /([^&=]+)=([^&]*)/g,
-            m;
-        while (m = regex.exec(queryString)) {
-          params[decodeURIComponent(m[1])] = decodeURIComponent(m[2]);
-        }
+    before: function(route, params){
+      console.log(route);
 
-        console.log(params);
+      console.log(app.appRegion);
+      console.log(app.appRegion.currentView);
+      //console.log(app.appRegion.currentView instanceof SplitView);
 
-        localStorage.setItem('google-auth', JSON.stringify(params));
-        app.router.navigate("/", {trigger: true});
-      }
-    },
-    people: function(){
-      app.someModule.models.peopleCollection = app.someModule.models.peopleCollection || new PeopleCollection();
-
-      app.appRegion.currentView.menuRegion.currentView.changeSelect('people');
-      app.appRegion.currentView.setTitleToHeader('people');
-
-      app.appRegion.currentView.mainRegion.show(
-        new PeopleView({
-          collection: app.someModule.models.peopleCollection
-        })
-      );
-
-      app.someModule.models.peopleCollection.fetch();
-    },
-    person: function(id){
-      var personModel = app.someModule.models.peopleCollection.get(id);
-
-      app.appRegion.currentView.setTitleToHeader('person');
-
-      app.appRegion.currentView.mainRegion.show(
-        new PersonView({
-          model: personModel
-        })
-      );
-
-      personModel.fetch();
-    },
-    me: function(){
-      app.someModule.models.meModel = app.someModule.models.meModel || new PersonModel({id: 'me'});
-
-      app.appRegion.currentView.menuRegion.currentView.changeSelect('me');
-      app.appRegion.currentView.setTitleToHeader('me');
-
-      app.appRegion.currentView.mainRegion.show(
-        new PersonView({
-          model: app.someModule.models.meModel
-        })
-      );
-
-      app.someModule.models.meModel.fetch();
+      if(!app.appRegion.currentView ||  (!(app.appRegion.currentView instanceof SplitView) && route !== 'login'))
+        app.appRegion.show( new SplitView() );
     }/*,
-    index: function(keywordString) {
-      var keywordModel = app.someModule.models.keywords.findWhere({title: keywordString}) || app.someModule.models.keywords.at(0);
-
-      app.appRegion.currentView.mainRegion.show(new Backbone.Marionette.PullableLayout({
-        id: "home-pullable-" + keywordModel.get('title'),
-        view: new HomeView({
-          collection: keywordModel.tweets,
-          model: keywordModel
-        })
-      }));
-
-      app.appRegion.currentView.setModelToHeader(keywordModel);
-
-      app.appRegion.currentView.menuRegion.currentView.selectingModel(keywordModel);
-      app.appRegion.currentView.submenuRegion.currentView.selecting(keywordModel.get('lang'));
-
-      keywordModel.tweets.fetch();
-    },
-    post: function() {
-      app.appRegion.currentView.mainRegion.show(new PostView());
-    }*/
+    after: function(route, params){}*/
   });
 
   return Router;

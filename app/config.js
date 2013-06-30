@@ -29,6 +29,8 @@ require.config({
 
     "plugins/jquery.toObject": ["jquery", "plugins/form2js"],
 
+    "plugins/backbone.routefilter": ["backbone"],
+
     "plugins/backbone.marionette": ["backbone"],
 
     "plugins/backbone.marionette.animationregion": ["plugins/backbone.marionette"],

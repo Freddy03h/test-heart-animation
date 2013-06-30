@@ -21,7 +21,7 @@ function(app, template, templatePerson) {
 
   return Backbone.Marionette.CompositeView.extend({
     tagName: "div",
-    id:"home",
+    id:"people",
     className:"scrollable",
     template: template,
     itemView: PersonLine,

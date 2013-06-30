@@ -17,8 +17,8 @@ function(app, Router, SplitView) {
     },
   false);
 
-  app.someModule.views.split = new SplitView();
-  app.appRegion.show(app.someModule.views.split);
+  //app.someModule.views.split = new SplitView();
+  //app.appRegion.show(app.someModule.views.split);
 
   // Define your master router on the application namespace and trigger all
   // navigation from this instance.
@@ -32,50 +32,6 @@ function(app, Router, SplitView) {
   // Trigger the initial route and enable HTML5 History API support, set the
   // root folder to '/' by default.  Change in app.js.
   Backbone.history.start({ pushState: true, root: app.root });
-
-  /*app.bearer_token = localStorage.getItem('bearer');
-  console.log(app.bearer_token);
-
-  if(app.bearer_token){
-    app.codebird.setBearerToken( app.bearer_token );
-
-  }else{
-    app.codebird.__call(
-      'oauth2_token',
-      {},
-      function (reply) {
-        app.bearer_token = reply.access_token;
-        localStorage.setItem('bearer', app.bearer_token);
-        app.codebird.setBearerToken( app.bearer_token );
-      }
-    );
-  }*/
-
-  /*
-  Client ID:  
-251443412694-6e33m2hquu621vmev084eo5vvjafbahj.apps.googleusercontent.com
-Email address:  
-251443412694-6e33m2hquu621vmev084eo5vvjafbahj@developer.gserviceaccount.com
-Client secret:  
-w42r0R6nj6JpEpoiFkjNzU_M
-Redirect URIs:  http://localhost:8081/heart/
-JavaScript origins: http://localhost
-  */
-
-  /*
-
-var xhr = new XMLHttpRequest();
-xhr.open('POST', 'https://www.googleapis.com/urlshortener/v1/url?key=AIzaDyAdjuPT5Pb4Nu56WJ_nlrMGOAgUAtKjiPM');
-xhr.setRequestHeader('Content-Type', 'application/json');
-xhr.onload = function() {
-  alert(xhr.responseText);
-};
-xhr.send(JSON.stringify({
-  'longUrl': 'http://www.google.com'
-}));
-
-  */
-
 
 
   // All navigation that is relative should be passed through the navigate
