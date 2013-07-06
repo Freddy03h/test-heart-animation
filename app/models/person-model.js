@@ -11,6 +11,7 @@ function(app,/* template*/Backbone) {
   return Backbone.Model.extend({
     defaults: {
       "displayName": "",
+      "tagline": "",
       "image": {"url": ""},
       "gender":"",
       "aboutMe":"",
@@ -27,10 +28,13 @@ function(app,/* template*/Backbone) {
       };
       return Backbone.sync(method, model, options);
     },
-    /*parse: function(response) {
+    parse: function(response) {
+      console.log(response);
+      var rootURL = response.image.url.replace('?sz=50', '');
+      response.image['url-100'] = rootURL + '?sz=100';
       console.log(response);
       return response;
-    },*/
+    },
     initialize : function(data, options){
       this.options = options;
     }

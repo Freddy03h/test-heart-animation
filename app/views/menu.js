@@ -41,7 +41,7 @@ function(app, template) {
 
   return Backbone.Marionette.ItemView.extend({
     tagName: "ul",
-    id:"menu",
+    id:"menu-list",
     className: "wrap",
     template: template,
     //itemView: ItemLine,
@@ -62,6 +62,7 @@ function(app, template) {
       console.log(e.currentTarget.dataset.page);
       var page = e.currentTarget.dataset.page;
       //this.changeSelect(page);
+      app.appRegion.currentView.$el.toggleClass('open-menu');
       app.router.navigate( page, {trigger: true});
     }/*,
     selectingModel : function(modelSelected){

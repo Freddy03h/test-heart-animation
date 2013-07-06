@@ -7,8 +7,13 @@
 	</div>-->
 
 	<div class="wrap">
-		<h1><%= displayName %></h1>
-		<img src="<%= image.url %>" />
+		<div class="infos">
+			<img src="<%= image['url-100'] %>" />
+			<div class="infos-primary">
+				<h1><%= displayName %></h1>
+				<h2><%= tagline %></h2>
+			</div>
+		</div>
 		<p><%= gender %></p>
 		<p><%= birthday %></p>
 		<div class="about"><%= aboutMe %></div>

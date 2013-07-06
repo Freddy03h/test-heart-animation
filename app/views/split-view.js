@@ -10,7 +10,7 @@ function(app, template, MenuView, SubmenuView) {
 
   return Backbone.Marionette.Layout.extend({
     tagName: "div",
-    className: "split-view page-layout",
+    className: "split-view",
     template: template,
     regions: {
       mainRegion: {
@@ -19,11 +19,12 @@ function(app, template, MenuView, SubmenuView) {
       },
       headerRegion: '#header',
       menuRegion: '#menu-main',
-      submenuRegion: "#sub-menu"
+      submenuRegion: "#toggle-menu"
     },
     events: {
-      'click #menu-one': 'openMenu',
-      'click #menu-two': 'toggleSubMenu',
+      'click #button-split': 'openMenu',
+      'click #button-toggle': 'toggleSubMenu',
+      'click #button-back': 'backNavigation',
       'click #menu a': 'openMenu'
     },
     initialize : function(e){
@@ -44,8 +45,8 @@ function(app, template, MenuView, SubmenuView) {
       this.menuRegion.show(this.menuView);
       this.submenuRegion.show(this.submenuView);
 
-      this.submenuEl = this.$el.find('#sub-menu');
-      this.buttonSubmenuEl = this.$el.find('#menu-two');
+      this.submenuEl = this.$el.find('#toggle-menu');
+      this.buttonSubmenuEl = this.$el.find('#button-toggle');
       this.contentEl = this.$el.find('#content');
     },
     openMenu: function(e){
@@ -118,8 +119,14 @@ function(app, template, MenuView, SubmenuView) {
       },10);
     },
 
+    backNavigation: function(e){
+      app.appRegion.currentView.mainRegion.animation = "slideright";
+      window.history.back();
+    },
+
     setTitleToHeader: function(title, back){
-      this.$el.find("#header .title").text(title);
+      this.$el.find("#header .title:not(.current)").text(title);
+      this.$el.find("#header .title").toggleClass('current');
       this.$el.find("#header").toggleClass( 'back', back );
     }
 

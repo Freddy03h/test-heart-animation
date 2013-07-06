@@ -38,7 +38,7 @@ function(app, PeopleCollection, PersonModel, LoginView, PeopleView, PersonView) 
       app.someModule.models.peopleCollection = app.someModule.models.peopleCollection || new PeopleCollection();
 
       app.appRegion.currentView.menuRegion.currentView.changeSelect('people');
-      app.appRegion.currentView.setTitleToHeader('people', false);
+      app.appRegion.currentView.setTitleToHeader('Contacts', false);
 
       app.appRegion.currentView.mainRegion.show(
         new PeopleView({
@@ -51,7 +51,7 @@ function(app, PeopleCollection, PersonModel, LoginView, PeopleView, PersonView) 
     person: function(id){
       var personModel = app.someModule.models.peopleCollection.get(id);
 
-      app.appRegion.currentView.setTitleToHeader('person', true);
+      app.appRegion.currentView.setTitleToHeader('Infos', true);
 
       app.appRegion.currentView.mainRegion.show(
         new PersonView({
@@ -65,7 +65,7 @@ function(app, PeopleCollection, PersonModel, LoginView, PeopleView, PersonView) 
       app.someModule.models.meModel = app.someModule.models.meModel || new PersonModel({id: 'me'});
 
       app.appRegion.currentView.menuRegion.currentView.changeSelect('me');
-      app.appRegion.currentView.setTitleToHeader('me', false);
+      app.appRegion.currentView.setTitleToHeader('Infos', false);
 
       app.appRegion.currentView.mainRegion.show(
         new PersonView({

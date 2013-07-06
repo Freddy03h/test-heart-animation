@@ -9,6 +9,7 @@ function(app, template) {
   return Backbone.Marionette.ItemView.extend({
     tagName: "div",
     id: function(){ return 'person-'+this.model.id;},
+    className: 'person',
     template: template,
 
     initialize: function(){

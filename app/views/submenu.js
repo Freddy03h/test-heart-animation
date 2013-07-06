@@ -30,7 +30,7 @@ function(app, template) {
 
   return Backbone.Marionette.CompositeView.extend({
     tagName: 'div',
-    //id:"sub-menu",
+    //id:"toggle-menu",
     className: 'wrap',
     template: '<ul></ul>',
     itemView: ItemLine,
