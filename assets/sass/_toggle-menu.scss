@@ -12,6 +12,8 @@
 	.wrap{
 		-webkit-perspective: 1000px;
 	    perspective: 1000px;
+	    -webkit-perspective-origin: 50% 50%;
+        perspective-origin: 50% 50%;
 	    -webkit-transform-style: preserve-3d;
 	    transform-style: preserve-3d;
 	}
@@ -23,6 +25,7 @@
 		@include transition(transform 300ms ease-in-out, opacity 250ms ease-in-out 50ms);
 		@include transform(translateY(-100%) translateZ(-200px) rotateX(45deg));
 		opacity:0;
+		-webkit-backface-visibility: hidden;
 	}
 	li{
 		background-color: $bleuClair;

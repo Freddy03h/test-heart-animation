@@ -80,42 +80,51 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
   right: 0;
   left: 0;
   bottom: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
   overflow-x: hidden;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
-/* line 14, ../sass/heart/_heart.scss */
+/* line 15, ../sass/heart/_heart.scss */
 .page-layout.with-topbar, .cssanimations.csstransforms3d.positionfixed .with-topbar.scrollable, .cssanimations.csstransforms3d.positionfixed #toggle-menu, .cssanimations.csstransforms3d.positionfixed .scrollable#main, .cssanimations.csstransforms3d.positionfixed #menu-main, .with-topbar.split-view, .split-view#toggle-menu, .split-view#main, .split-view#menu-main, .split-view > .with-topbar.aside-view, .split-view > .aside-view#toggle-menu, .split-view > .aside-view#main, .split-view > .aside-view#menu-main, .split-view > .with-topbar.content-view, .split-view > .content-view#toggle-menu, .split-view > .content-view#main, .split-view > .content-view#menu-main, .page-layout#toggle-menu, .with-topbar#app, #main, .page-layout#menu-main, .with-topbar#login {
   top: 44px;
 }
-/* line 17, ../sass/heart/_heart.scss */
+/* line 18, ../sass/heart/_heart.scss */
 .page-layout.with-bottombar, .cssanimations.csstransforms3d.positionfixed .with-bottombar.scrollable, .cssanimations.csstransforms3d.positionfixed .with-bottombar#toggle-menu, .cssanimations.csstransforms3d.positionfixed .with-bottombar#menu-main, .with-bottombar.split-view, .split-view > .with-bottombar.aside-view, .split-view > .with-bottombar.content-view, .with-bottombar#app, .with-bottombar#main, .with-bottombar#login {
   bottom: 50px;
 }
 
-/* line 21, ../sass/heart/_heart.scss */
+/* line 22, ../sass/heart/_heart.scss */
 .topbar, .navbar, #menu-header, #header, .sub-header {
   position: absolute;
   top: 0;
   right: 0;
   left: 0;
   height: 44px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* line 28, ../sass/heart/_heart.scss */
+/* line 30, ../sass/heart/_heart.scss */
 .bottombar, .tabbar, #tab-bar {
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
   height: 50px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-/* line 38, ../sass/heart/_heart.scss */
+/* line 41, ../sass/heart/_heart.scss */
 .no-cssanimations, .no-cssanimations body, .no-csstransforms3d, .no-csstransforms3d body, .no-positionfixed, .no-positionfixed body {
   height: 100%;
 }
-/* line 39, ../sass/heart/_heart.scss */
+/* line 42, ../sass/heart/_heart.scss */
 .no-cssanimations .page-layout, .no-cssanimations .cssanimations.csstransforms3d.positionfixed .scrollable, .cssanimations.csstransforms3d.positionfixed .no-cssanimations .scrollable, .no-cssanimations .cssanimations.csstransforms3d.positionfixed #toggle-menu, .cssanimations.csstransforms3d.positionfixed .no-cssanimations #toggle-menu, .no-cssanimations .cssanimations.csstransforms3d.positionfixed #menu-main, .cssanimations.csstransforms3d.positionfixed .no-cssanimations #menu-main, .no-cssanimations .split-view, .no-cssanimations .split-view > .aside-view, .no-cssanimations .split-view > .content-view, .no-cssanimations #app, .no-cssanimations #main, .no-cssanimations #login, .no-csstransforms3d .page-layout, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed .scrollable, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d .scrollable, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed #toggle-menu, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d #toggle-menu, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed #menu-main, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d #menu-main, .no-csstransforms3d .split-view, .no-csstransforms3d .split-view > .aside-view, .no-csstransforms3d .split-view > .content-view, .no-csstransforms3d #app, .no-csstransforms3d #main, .no-csstransforms3d #login, .no-positionfixed .page-layout, .no-positionfixed .cssanimations.csstransforms3d.positionfixed .scrollable, .cssanimations.csstransforms3d.positionfixed .no-positionfixed .scrollable, .no-positionfixed .cssanimations.csstransforms3d.positionfixed #toggle-menu, .cssanimations.csstransforms3d.positionfixed .no-positionfixed #toggle-menu, .no-positionfixed .cssanimations.csstransforms3d.positionfixed #menu-main, .cssanimations.csstransforms3d.positionfixed .no-positionfixed #menu-main, .no-positionfixed .split-view, .no-positionfixed .split-view > .aside-view, .no-positionfixed .split-view > .content-view, .no-positionfixed #app, .no-positionfixed #main, .no-positionfixed #login {
   position: relative;
   bottom: auto;
@@ -123,11 +132,11 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
   padding-bottom: 0;
   overflow-y: visible;
 }
-/* line 46, ../sass/heart/_heart.scss */
+/* line 49, ../sass/heart/_heart.scss */
 .no-cssanimations .topbar, .no-cssanimations .navbar, .no-cssanimations #menu-header, .no-cssanimations #header, .no-cssanimations .sub-header, .no-csstransforms3d .topbar, .no-csstransforms3d .navbar, .no-csstransforms3d #menu-header, .no-csstransforms3d #header, .no-csstransforms3d .sub-header, .no-positionfixed .topbar, .no-positionfixed .navbar, .no-positionfixed #menu-header, .no-positionfixed #header, .no-positionfixed .sub-header {
   position: static;
 }
-/* line 49, ../sass/heart/_heart.scss */
+/* line 52, ../sass/heart/_heart.scss */
 .no-cssanimations .page-layout.with-topbar, .no-cssanimations .cssanimations.csstransforms3d.positionfixed .with-topbar.scrollable, .cssanimations.csstransforms3d.positionfixed .no-cssanimations .with-topbar.scrollable, .no-cssanimations .cssanimations.csstransforms3d.positionfixed #toggle-menu, .cssanimations.csstransforms3d.positionfixed .no-cssanimations #toggle-menu, .no-cssanimations .cssanimations.csstransforms3d.positionfixed .scrollable#main, .cssanimations.csstransforms3d.positionfixed .no-cssanimations .scrollable#main, .no-cssanimations .cssanimations.csstransforms3d.positionfixed #menu-main, .cssanimations.csstransforms3d.positionfixed .no-cssanimations #menu-main, .no-cssanimations .with-topbar.split-view, .no-cssanimations .split-view#toggle-menu, .no-cssanimations .split-view#menu-main, .no-cssanimations .split-view > .with-topbar.aside-view, .no-cssanimations .split-view > .aside-view#toggle-menu, .no-cssanimations .split-view > .aside-view#main, .no-cssanimations .split-view > .aside-view#menu-main, .no-cssanimations .split-view > .with-topbar.content-view, .no-cssanimations .split-view > .content-view#toggle-menu, .no-cssanimations .split-view > .content-view#main, .no-cssanimations .split-view > .content-view#menu-main, .no-cssanimations .page-layout#toggle-menu, .no-cssanimations .with-topbar#app, .no-cssanimations #main, .no-cssanimations .page-layout#menu-main, .no-cssanimations .with-topbar#login, .no-csstransforms3d .page-layout.with-topbar, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed .with-topbar.scrollable, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d .with-topbar.scrollable, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed #toggle-menu, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d #toggle-menu, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed .scrollable#main, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d .scrollable#main, .no-csstransforms3d .cssanimations.csstransforms3d.positionfixed #menu-main, .cssanimations.csstransforms3d.positionfixed .no-csstransforms3d #menu-main, .no-csstransforms3d .with-topbar.split-view, .no-csstransforms3d .split-view#toggle-menu, .no-csstransforms3d .split-view#menu-main, .no-csstransforms3d .split-view > .with-topbar.aside-view, .no-csstransforms3d .split-view > .aside-view#toggle-menu, .no-csstransforms3d .split-view > .aside-view#main, .no-csstransforms3d .split-view > .aside-view#menu-main, .no-csstransforms3d .split-view > .with-topbar.content-view, .no-csstransforms3d .split-view > .content-view#toggle-menu, .no-csstransforms3d .split-view > .content-view#main, .no-csstransforms3d .split-view > .content-view#menu-main, .no-csstransforms3d .page-layout#toggle-menu, .no-csstransforms3d .with-topbar#app, .no-csstransforms3d #main, .no-csstransforms3d .page-layout#menu-main, .no-csstransforms3d .with-topbar#login, .no-positionfixed .page-layout.with-topbar, .no-positionfixed .cssanimations.csstransforms3d.positionfixed .with-topbar.scrollable, .cssanimations.csstransforms3d.positionfixed .no-positionfixed .with-topbar.scrollable, .no-positionfixed .cssanimations.csstransforms3d.positionfixed #toggle-menu, .cssanimations.csstransforms3d.positionfixed .no-positionfixed #toggle-menu, .no-positionfixed .cssanimations.csstransforms3d.positionfixed .scrollable#main, .cssanimations.csstransforms3d.positionfixed .no-positionfixed .scrollable#main, .no-positionfixed .cssanimations.csstransforms3d.positionfixed #menu-main, .cssanimations.csstransforms3d.positionfixed .no-positionfixed #menu-main, .no-positionfixed .with-topbar.split-view, .no-positionfixed .split-view#toggle-menu, .no-positionfixed .split-view#menu-main, .no-positionfixed .split-view > .with-topbar.aside-view, .no-positionfixed .split-view > .aside-view#toggle-menu, .no-positionfixed .split-view > .aside-view#main, .no-positionfixed .split-view > .aside-view#menu-main, .no-positionfixed .split-view > .with-topbar.content-view, .no-positionfixed .split-view > .content-view#toggle-menu, .no-positionfixed .split-view > .content-view#main, .no-positionfixed .split-view > .content-view#menu-main, .no-positionfixed .page-layout#toggle-menu, .no-positionfixed .with-topbar#app, .no-positionfixed #main, .no-positionfixed .page-layout#menu-main, .no-positionfixed .with-topbar#login {
   top: auto;
 }
@@ -310,22 +319,26 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
   display: block;
 }
 
-/* line 4, ../sass/heart/_split-view.scss */
+/* line 2, ../sass/heart/_split-view.scss */
+.split-view {
+  -webkit-overflow-scrolling: auto;
+}
+/* line 5, ../sass/heart/_split-view.scss */
 .split-view > .aside-view {
   width: 276px;
   z-index: 1;
 }
-/* line 9, ../sass/heart/_split-view.scss */
+/* line 10, ../sass/heart/_split-view.scss */
 .split-view > .content-view {
   left: 276px;
   z-index: 2;
 }
-/* line 16, ../sass/heart/_split-view.scss */
+/* line 17, ../sass/heart/_split-view.scss */
 .split-view .button-split, .split-view #button-split {
   display: none;
 }
 
-/* line 24, ../sass/heart/_split-view.scss */
+/* line 25, ../sass/heart/_split-view.scss */
 .no-cssanimations .split-view, .no-csstransforms3d .split-view, .no-positionfixed .split-view {
   min-height: 100%;
   display: -webkit-box;
@@ -341,7 +354,7 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
   display: -ms-flex;
   display: flex;
 }
-/* line 27, ../sass/heart/_split-view.scss */
+/* line 28, ../sass/heart/_split-view.scss */
 .no-cssanimations .split-view > .aside-view, .no-cssanimations .split-view > .content-view, .no-csstransforms3d .split-view > .aside-view, .no-csstransforms3d .split-view > .content-view, .no-positionfixed .split-view > .aside-view, .no-positionfixed .split-view > .content-view {
   display: -webkit-box;
   display: -moz-box;
@@ -367,12 +380,12 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
   	@include flex(1);
   }*/
 }
-/* line 35, ../sass/heart/_split-view.scss */
+/* line 36, ../sass/heart/_split-view.scss */
 .no-cssanimations .split-view > .aside-view, .no-csstransforms3d .split-view > .aside-view, .no-positionfixed .split-view > .aside-view {
   position: relative;
   min-height: 100%;
 }
-/* line 39, ../sass/heart/_split-view.scss */
+/* line 40, ../sass/heart/_split-view.scss */
 .no-cssanimations .split-view > .content-view, .no-csstransforms3d .split-view > .content-view, .no-positionfixed .split-view > .content-view {
   left: auto;
   -webkit-box-flex: 1;
@@ -386,14 +399,16 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
 }
 
 @media screen and (max-width: 570px) {
-  /* line 47, ../sass/heart/_split-view.scss */
+  /* line 48, ../sass/heart/_split-view.scss */
   .split-view {
     -webkit-perspective: 1000px;
     perspective: 1000px;
+    -webkit-perspective-origin: 50% 50%;
+    perspective-origin: 50% 50%;
     -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
   }
-  /* line 53, ../sass/heart/_split-view.scss */
+  /* line 56, ../sass/heart/_split-view.scss */
   .split-view > .aside-view, .split-view > .content-view {
     -webkit-transition-property: -webkit-transform;
     transition-property: transform;
@@ -403,47 +418,47 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
     transition-timing-function: ease-in-out;
     -webkit-backface-visibility: hidden;
   }
-  /* line 63, ../sass/heart/_split-view.scss */
+  /* line 66, ../sass/heart/_split-view.scss */
   .split-view > .aside-view {
     width: 276px;
     -webkit-transform: translateZ(-100px) rotateY(25deg);
     transform: translateZ(-100px) rotateY(25deg);
   }
-  /* line 70, ../sass/heart/_split-view.scss */
+  /* line 73, ../sass/heart/_split-view.scss */
   .split-view > .content-view {
     left: 0;
     width: 100%;
   }
-  /* line 75, ../sass/heart/_split-view.scss */
+  /* line 78, ../sass/heart/_split-view.scss */
   .split-view.open-menu > .aside-view {
     -webkit-transform: translateZ(0) rotateY(0deg);
     transform: translateZ(0) rotateY(0deg);
   }
-  /* line 80, ../sass/heart/_split-view.scss */
+  /* line 83, ../sass/heart/_split-view.scss */
   .split-view.open-menu > .content-view {
     -webkit-transform: translateX(276px);
     transform: translateX(276px);
   }
-  /* line 86, ../sass/heart/_split-view.scss */
+  /* line 89, ../sass/heart/_split-view.scss */
   .split-view .button-split, .split-view #button-split {
     display: block;
   }
 
-  /* line 95, ../sass/heart/_split-view.scss */
+  /* line 98, ../sass/heart/_split-view.scss */
   .no-cssanimations .split-view > .aside-view, .no-csstransforms3d .split-view > .aside-view, .no-positionfixed .split-view > .aside-view {
     position: absolute;
     display: none;
   }
-  /* line 104, ../sass/heart/_split-view.scss */
+  /* line 107, ../sass/heart/_split-view.scss */
   .no-cssanimations .split-view.open-menu, .no-csstransforms3d .split-view.open-menu, .no-positionfixed .split-view.open-menu {
     display: block;
   }
-  /* line 106, ../sass/heart/_split-view.scss */
+  /* line 109, ../sass/heart/_split-view.scss */
   .no-cssanimations .split-view.open-menu > .aside-view, .no-csstransforms3d .split-view.open-menu > .aside-view, .no-positionfixed .split-view.open-menu > .aside-view {
     position: static;
     display: block;
   }
-  /* line 110, ../sass/heart/_split-view.scss */
+  /* line 113, ../sass/heart/_split-view.scss */
   .no-cssanimations .split-view.open-menu > .content-view, .no-csstransforms3d .split-view.open-menu > .content-view, .no-positionfixed .split-view.open-menu > .content-view {
     position: absolute;
     left: 276px;
@@ -462,22 +477,24 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
 .cssanimations.csstransforms3d.positionfixed .animation-region, .cssanimations.csstransforms3d.positionfixed #main {
   -webkit-perspective: 1000px;
   perspective: 1000px;
+  -webkit-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
   overflow: hidden;
 }
-/* line 15, ../sass/heart/_animation-region.scss */
+/* line 17, ../sass/heart/_animation-region.scss */
 .cssanimations.csstransforms3d.positionfixed .animation-region > *, .cssanimations.csstransforms3d.positionfixed #main > * {
   width: 100%;
   position: absolute;
   display: block;
   -webkit-backface-visibility: hidden;
 }
-/* line 23, ../sass/heart/_animation-region.scss */
+/* line 25, ../sass/heart/_animation-region.scss */
 .cssanimations.csstransforms3d.positionfixed .animation-region > :not(.current), .cssanimations.csstransforms3d.positionfixed #main > :not(.current) {
   display: none;
 }
-/* line 27, ../sass/heart/_animation-region.scss */
+/* line 29, ../sass/heart/_animation-region.scss */
 .cssanimations.csstransforms3d.positionfixed .in, .cssanimations.csstransforms3d.positionfixed .out {
   -webkit-animation-fill-mode: both;
   -webkit-animation-timing-function: ease-in-out;
@@ -711,10 +728,12 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
 #toggle-menu .wrap {
   -webkit-perspective: 1000px;
   perspective: 1000px;
+  -webkit-perspective-origin: 50% 50%;
+  perspective-origin: 50% 50%;
   -webkit-transform-style: preserve-3d;
   transform-style: preserve-3d;
 }
-/* line 20, ../sass/_toggle-menu.scss */
+/* line 22, ../sass/_toggle-menu.scss */
 #toggle-menu ul {
   background-color: #2b2b67;
   color: #2b2b67;
@@ -729,16 +748,17 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
   -o-transform: translateY(-100%) translateZ(-200px) rotateX(45deg);
   transform: translateY(-100%) translateZ(-200px) rotateX(45deg);
   opacity: 0;
+  -webkit-backface-visibility: hidden;
 }
-/* line 27, ../sass/_toggle-menu.scss */
+/* line 30, ../sass/_toggle-menu.scss */
 #toggle-menu li {
   background-color: lavender;
 }
-/* line 30, ../sass/_toggle-menu.scss */
+/* line 33, ../sass/_toggle-menu.scss */
 #toggle-menu a.selected li {
   background-color: #ffbf00;
 }
-/* line 34, ../sass/_toggle-menu.scss */
+/* line 37, ../sass/_toggle-menu.scss */
 .open-submenu #toggle-menu {
   background-color: rgba(0, 0, 0, 0.5);
   -webkit-transition-delay: 0ms;
@@ -746,7 +766,7 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
   -o-transition-delay: 0ms;
   transition-delay: 0ms;
 }
-/* line 37, ../sass/_toggle-menu.scss */
+/* line 40, ../sass/_toggle-menu.scss */
 .open-submenu #toggle-menu ul {
   -webkit-transform: translateY(0) translateZ(0) rotateX(0deg);
   -moz-transform: translateY(0) translateZ(0) rotateX(0deg);
@@ -755,12 +775,12 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
   transform: translateY(0) translateZ(0) rotateX(0deg);
   opacity: 1;
 }
-/* line 42, ../sass/_toggle-menu.scss */
+/* line 45, ../sass/_toggle-menu.scss */
 #toggle-menu.displayed {
   display: block;
 }
 
-/* line 47, ../sass/_toggle-menu.scss */
+/* line 50, ../sass/_toggle-menu.scss */
 .no-cssanimations #toggle-menu, .no-csstransforms3d #toggle-menu, .no-positionfixed #toggle-menu {
   -webkit-transition: none;
   -moz-transition: none;
@@ -768,7 +788,7 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
   transition: none;
   display: none;
 }
-/* line 49, ../sass/_toggle-menu.scss */
+/* line 52, ../sass/_toggle-menu.scss */
 .no-cssanimations #toggle-menu ul, .no-csstransforms3d #toggle-menu ul, .no-positionfixed #toggle-menu ul {
   -webkit-transition: none;
   -moz-transition: none;
@@ -780,7 +800,7 @@ body.page-layout, .cssanimations.csstransforms3d.positionfixed body.scrollable, 
   -o-transform: none;
   transform: none;
 }
-/* line 55, ../sass/_toggle-menu.scss */
+/* line 58, ../sass/_toggle-menu.scss */
 .no-cssanimations .open-submenu #toggle-menu, .no-csstransforms3d .open-submenu #toggle-menu, .no-positionfixed .open-submenu #toggle-menu {
   display: block;
 }
